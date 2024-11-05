@@ -10,4 +10,8 @@ public class Patron() {
     public Patron(HashMap<Type, Integer> theMap, String theString) {
         price = new HashMap<Type, Integer>();
     }
+
+    public HashMap<Type, Integer> getPrice() {
+        return price;
+    }
 }
