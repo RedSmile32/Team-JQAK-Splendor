@@ -6,13 +6,13 @@ public class card{
     private Integer points;
     private Type discountColor;
     private Integer tier;
-    public card(boolean flipped, Integer points, Type discountColor, Integer tier, HashMap<Type, Integer> price){
-        this.flipped = flipped;
+    public card( Integer points, Type discountColor, Integer tier, HashMap<Type, Integer> price){
+        
         this.points = points;
         this.discountColor = discountColor;
         this.tier = tier;
         this.price = price;
-        
+
 
 
     }
