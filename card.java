@@ -16,6 +16,21 @@ public class card{
 
 
     }
+    public Type getDiscountColor(){
+
+    }
+    public draw(int, int, int, Graphics){
+
+    }
+    public boolean getFlip(){
+
+    }
+    public flip(){
+
+    }
+    public set
+
+
 
 
 
