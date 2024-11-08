@@ -4,7 +4,7 @@ public class Patron() {
     // enum Type {
     //     LOW,
     //     MEDIUM,
-    //     HIGHEUIRGIURGEHUIRGEHGREURGEHUIRGHEREHIUREGHUIRGHEIUGREHGERHUIREGH
+    //     HIGH
     // }
     HashMap<Type, Integer> price;
     public Patron(HashMap<Type, Integer> theMap, String theString) {
