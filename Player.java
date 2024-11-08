@@ -14,6 +14,7 @@ public class Player{
 
     }
     public boolean buyCard(Card){
+        return true;
         
 
 
