@@ -8,7 +8,7 @@ public class Patron {
         this.price = price;
         this.name = name;
     }
-
+    //return price
     public HashMap<Type, Integer> getPrice() {
         return price;
     }
