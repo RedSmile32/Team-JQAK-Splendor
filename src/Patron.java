@@ -4,9 +4,9 @@ public class Patron {
     Type type;
     HashMap<Type, Integer> price;
     String name;
-    public Patron(HashMap<Type, Integer> price, String theString) {
+    public Patron(HashMap<Type, Integer> price, String name) {
         this.price = price;
-        this.name 
+        this.name = name;
     }
 
     public HashMap<Type, Integer> getPrice() {
