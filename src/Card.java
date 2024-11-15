@@ -13,16 +13,23 @@ public class Card {
         this.tier = tier;
         this.price = price;
     }
-//    public Type getDiscountColor(){
-//
-//    }
+    public Type getDiscountColor(){
+        return discountColor;
+    }
 //    public draw(int, int, int, Graphics){
 //
 //    }
-//    public boolean getFlip(){
-//
-//    }
-//    public flip(){
-//
-//    }
+    public boolean getFlip(){
+        return flipped;
+    }
+    public void flip(){
+        flipped = !flipped;
+    }
+    public int getPriceByColor(Type t) {
+        return price.get(t);
+    }
+
+    public int getPoints() {
+        return points;
+    }
 }

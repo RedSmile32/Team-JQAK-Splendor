@@ -6,7 +6,7 @@ public class Patron {
     String name;
     public Patron(HashMap<Type, Integer> price, String theString) {
         this.price = price;
-        this.name 
+        this.name = theString;
     }
 
     public HashMap<Type, Integer> getPrice() {
