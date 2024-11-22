@@ -30,7 +30,7 @@ public class Player {
                 if (c.getPriceByColor(f) - tokens.get(f) - getDiscount(f) > 0) {
                     tokens.put(Type.WILD, tokens.get(Type.WILD) - c.getPriceByColor(f) + tokens.get(f) + getDiscount(f));
                 }
-                tokens.put(f, tokens.get(f) - c.getPriceByColor(f) - getDiscount(f));
+                tokens.put(f, tokens.get(f) - c.getPriceByColor(f) - getDiscount(f)); //this is wrong, correct it later.
                 if (tokens.get(f) < 0) {
                     tokens.put(f, 0);
                 }
