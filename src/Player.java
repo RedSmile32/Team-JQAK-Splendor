@@ -82,4 +82,8 @@ public class Player {
         cards.put(Type.WILD, temp);
         return true;
     }
+
+    public void setP1(Boolean b) {
+        p1 = b;
+    }
 }
