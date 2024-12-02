@@ -56,8 +56,9 @@ public class GamePanel extends JPanel implements MouseListener {
         prices.put(Type.RED, Integer.parseInt(scan.next()));
         prices.put(Type.BLUE, Integer.parseInt(scan.next()));
         prices.put(Type.GREEN, Integer.parseInt(scan.next()));
+        Card aCard = new Card(points, discountcolor, tier, prices);
 
-        temp.add(new Card(points, discountcolor, tier, prices));
+        temp.add(aCard);
 
 
 
