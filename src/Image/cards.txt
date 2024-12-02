@@ -155,37 +155,120 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.BLACK",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
+"tier"   :  "2",
+"blackPrice" : "0",
+"whitePrice" : "3",
+"redPrice" : "3",
+"bluePrice" : "3",
+"greenPrice" : "5"
 },
 {
 "points"   :  "4",
 "discountColor" :  "Type.BLACK",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
+"tier"   :  "2",
+"blackPrice" : "0",
+"whitePrice" : "0",
+"redPrice" : "7",
+"bluePrice" : "0",
+"greenPrice" : "0"
 },
 {
 "points"   :  "4",
 "discountColor" :  "Type.BLACK",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
+"tier"   :  "2",
+"blackPrice" : "3",
+"whitePrice" : "0",
+"redPrice" : "6",
+"bluePrice" : "0",
+"greenPrice" : "3"
 },
 {
 "points"   :  "5",
 "discountColor" :  "Type.BLACK",
-"tier"   :  "",
+"tier"   :  "2",
+"blackPrice" : "3",
+"whitePrice" : "0",
+"redPrice" : "7",
+"bluePrice" : "0",
+"greenPrice" : "0"
+},
+
+
+
+{
+"points"   :  "0",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
+"blackPrice" : "2",
+"whitePrice" : "1",
+"redPrice" : "0",
+"bluePrice" : "0",
+"greenPrice" : "0"
+},
+{
+"points"   :  "0",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
+"blackPrice" : "1",
+"whitePrice" : "1",
+"redPrice" : "2",
+"bluePrice" : "0",
+"greenPrice" : "1"
+},
+{
+"points"   :  "0",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
+"blackPrice" : "1",
+"whitePrice" : "1",
+"redPrice" : "1",
+"bluePrice" : "0",
+"greenPrice" : "1"
+},
+{
+"points"   :  "0",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
+"blackPrice" : "0",
+"whitePrice" : "0",
+"redPrice" : "1",
+"bluePrice" : "1",
+"greenPrice" : "3"
+},
+{
+"points"   :  "0",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
+"blackPrice" : "3",
+"whitePrice" : "0",
+"redPrice" : "0",
+"bluePrice" : "0",
+"greenPrice" : "0"
+},
+{
+"points"   :  "0",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
+"blackPrice" : "0",
+"whitePrice" : "1",
+"redPrice" : "2",
+"bluePrice" : "0",
+"greenPrice" : "2"
+},
+{
+"points"   :  "0",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
+"blackPrice" : "0",
+"whitePrice" : "0",
+"redPrice" : "2",
+"bluePrice" : "0",
+"greenPrice" : "2"
+},
+{
+"points"   :  "1",
+"discountColor" :  "Type.BLUE",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -196,69 +279,9 @@ greenprice
 
 
 {
-"points"   :  "0",
+"points"   :  "1",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-{
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-{
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-{
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-{
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-{
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-{
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -268,30 +291,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-
-
-
-{
-"points"   :  "1",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-},
-{
-"points"   :  "1",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -301,7 +301,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -311,7 +311,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -321,7 +321,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -331,7 +331,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -343,7 +343,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -353,7 +353,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -363,7 +363,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -373,7 +373,7 @@ greenprice
 {
 "points"   :  "5",
 "discountColor" :  "Type.BLUE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -385,7 +385,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -395,7 +395,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -405,7 +405,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -415,7 +415,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -425,7 +425,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -435,7 +435,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -445,7 +445,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -455,7 +455,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -468,7 +468,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -478,7 +478,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -488,7 +488,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -498,7 +498,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -508,7 +508,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -518,7 +518,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -530,7 +530,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -540,7 +540,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -550,7 +550,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -560,7 +560,7 @@ greenprice
 {
 "points"   :  "5",
 "discountColor" :  "Type.GREEN",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -572,7 +572,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -582,7 +582,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -592,7 +592,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -602,7 +602,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -612,7 +612,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -622,7 +622,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -632,7 +632,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -642,7 +642,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -655,7 +655,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -665,7 +665,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -675,7 +675,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -685,7 +685,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -695,7 +695,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -705,7 +705,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -717,7 +717,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -727,7 +727,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -737,7 +737,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -747,7 +747,7 @@ greenprice
 {
 "points"   :  "5",
 "discountColor" :  "Type.RED",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -759,7 +759,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -769,7 +769,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -779,7 +779,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -789,7 +789,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -799,7 +799,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -809,7 +809,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -819,7 +819,7 @@ greenprice
 {
 "points"   :  "0",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -829,7 +829,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "0",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -842,7 +842,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -852,7 +852,7 @@ greenprice
 {
 "points"   :  "1",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -862,7 +862,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -872,7 +872,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -882,7 +882,7 @@ greenprice
 {
 "points"   :  "2",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -892,7 +892,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "1",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -904,7 +904,7 @@ greenprice
 {
 "points"   :  "3",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -914,7 +914,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -924,7 +924,7 @@ greenprice
 {
 "points"   :  "4",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
@@ -934,7 +934,7 @@ greenprice
 {
 "points"   :  "5",
 "discountColor" :  "Type.WHITE",
-"tier"   :  "",
+"tier"   :  "2",
 "blackPrice" : "",
 "whitePrice" : "",
 "redPrice" : "",
