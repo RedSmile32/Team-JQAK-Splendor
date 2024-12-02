@@ -1,13 +1,10 @@
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.*;
 import java.util.*;
+
+
+
 
 public class GamePanel extends JPanel implements MouseListener {
     Player[] players = new Player[4];
@@ -44,6 +41,24 @@ public class GamePanel extends JPanel implements MouseListener {
             players[i] = new Player(false);
         }
         players[0].setP1(true);
+
+        ArrayList<Card> temp = new ArrayList<>();
+        Scanner scan = new Scanner("Image/cards.txt");
+
+        //turn text into card
+        int points = Integer.parseInt(scan.next());
+        Type discountcolor = Type.valueOf(scan.next());
+        int tier = Integer.parseInt(scan.next());
+
+        HashMap<Type, Integer> prices = new HashMap<>();
+        prices.put(Type.BLACK, Integer.parseInt(scan.next()));
+        prices.put(Type.WHITE, Integer.parseInt(scan.next()));
+        prices.put(Type.RED, Integer.parseInt(scan.next()));
+        prices.put(Type.BLUE, Integer.parseInt(scan.next()));
+        prices.put(Type.GREEN, Integer.parseInt(scan.next()));
+        temp.add();
+
+
 
     }
 }
