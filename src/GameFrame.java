@@ -2,10 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
-    final int WIDTH = 1280;
-    final int HEIGHT = 720;
+    static final int WIDTH = 1280;
+    static final int HEIGHT = 720;
     Dimension size;
     private MenuPanel menuPanel;
+    private GamePanel gamePanel;
 
     public GameFrame(String framename) {
         super(framename);
@@ -20,6 +21,9 @@ public class GameFrame extends JFrame {
     }
 
     public void startGame() {
-
+        remove(menuPanel);
+        gamePanel = new GamePanel();
+        add(gamePanel);
+        setVisible(true);
     }
 }

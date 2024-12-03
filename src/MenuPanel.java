@@ -1,63 +1,30 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
-public class MenuPanel extends JPanel implements MouseListener, KeyListener{
-    BufferedImage titleBackground;
-    BufferedImage rulesBackground;
-    BufferedImage rulesForeground;
-    BufferedImage startButton;
-    BufferedImage rulesButton;
+public class MenuPanel extends JPanel implements MouseListener {
+    private int easterEggTrigger;
+
 
     public MenuPanel() {
-        try {
-            titleBackground = ImageIO.read(MenuPanel.class.getResource(""));
-            System.out.println("Title background found");
-            rulesBackground = ImageIO.read(MenuPanel.class.getResource(""));
-            System.out.println("Rules background found");
-            rulesForeground = ImageIO.read(MenuPanel.class.getResource(""));
-            System.out.println("Rules foreground found");
-            startButton = ImageIO.read(MenuPanel.class.getResource(""));
-            System.out.println("Start button found");
-            rulesButton = ImageIO.read(MenuPanel.class.getResource(""));
-            System.out.println("Rules button found");
-        }
-        catch(Exception e) {
-            System.out.println("Image not found");
-        }
+        easterEggTrigger = 0;
         addMouseListener(this);
-        addKeyListener(this);
     }
 
     public void paint(Graphics g) {
-
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
+        g.drawImage(ImageHandler.background(), 0, 0, getWidth(), getHeight(), null);
+        g.setColor(Color.WHITE);
+        g.drawString("Click anywhere to start", getWidth()/2 - 10, 20);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        Splendor.startGame();
     }
 
     @Override
