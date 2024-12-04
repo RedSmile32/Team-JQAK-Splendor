@@ -45,20 +45,23 @@ public class GamePanel extends JPanel implements MouseListener {
         ArrayList<Card> temp = new ArrayList<>();
         Scanner scan = new Scanner("Image/cards.txt");
 
-        //turn text into card
-        int points = Integer.parseInt(scan.next());
-        Type discountcolor = Type.valueOf(scan.next());
-        int tier = Integer.parseInt(scan.next());
+        //turn text into cards
+        for (int i = 0; i < 36; i++) {//set this to 90 when the cards.txt file is complete
+            int points = Integer.parseInt(scan.nextLine());
+            Type discountcolor = Type.valueOf(scan.nextLine());
+            int tier = Integer.parseInt(scan.nextLine());
 
-        HashMap<Type, Integer> prices = new HashMap<>();
-        prices.put(Type.BLACK, Integer.parseInt(scan.next()));
-        prices.put(Type.WHITE, Integer.parseInt(scan.next()));
-        prices.put(Type.RED, Integer.parseInt(scan.next()));
-        prices.put(Type.BLUE, Integer.parseInt(scan.next()));
-        prices.put(Type.GREEN, Integer.parseInt(scan.next()));
-        Card aCard = new Card(points, discountcolor, tier, prices);
+            HashMap<Type, Integer> prices = new HashMap<>();
+            prices.put(Type.BLACK, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.WHITE, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.RED, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.BLUE, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.GREEN, Integer.parseInt(scan.nextLine()));
+            Card aCard = new Card(points, discountcolor, tier, prices);
+            scan.nextLine();
 
-        temp.add(aCard);
+            decks[aCard.getTier()].addCard(aCard);
+        }
 
 
 

@@ -32,4 +32,5 @@ public class Card {
     public int getPoints() {
         return points;
     }
+    public int getTier() {return tier;}
 }

@@ -15,7 +15,13 @@ public class Player {
         return p1;
     }
 
+    /**
+     * takes in a card and determines if the player can buy the card.
+     * if they can, the card will be added, tokens will be subracted and the method returns true.
+     * if not, the method will return false.
+     */
     public boolean buyCard(Card c) {
+        //determine if the card can be bought
         int temp = tokens.get(Type.WILD);
         for (Type f: Type.values()) {
             if (c.getPriceByColor(f) > tokens.get(f) + temp + getDiscount(f)) {
@@ -26,27 +32,38 @@ public class Player {
                 return false;
             }
         }
+        //subtract the tokens needed to buy the card
         for (Type f: Type.values()) {
+                //subtract wild tokens first
                 if (c.getPriceByColor(f) - tokens.get(f) - getDiscount(f) > 0) {
                     tokens.put(Type.WILD, tokens.get(Type.WILD) - c.getPriceByColor(f) + tokens.get(f) + getDiscount(f));
                 }
-                tokens.put(f, tokens.get(f) - c.getPriceByColor(f) - getDiscount(f)); //this is wrong, correct it later.
-                if (tokens.get(f) < 0) {
-                    tokens.put(f, 0);
+                //only subtracts tokens if the discount doesnt cover everything
+                if (getDiscount(f) < c.getPriceByColor(f)) {
+                    tokens.put(f, tokens.get(f) - c.getPriceByColor(f) + getDiscount(f)); //this is wrong, correct it later.
                 }
+
         }
 
-        //leaving off here.
+        //adds the card to the cards hashmap
         ArrayList<Card> tempcardlist = cards.get(c.getDiscountColor());
         tempcardlist.add(c);
         cards.put(c.getDiscountColor(), tempcardlist);
         return true;
     }
 
+    /**
+     * adds a token to the player of the color t
+     * @param t
+     */
     public void addToken(Type t) {
         tokens.put(t, tokens.get(t) + 1);
     }
 
+    /**
+     * removes a token of the color t
+     * @param t
+     */
     public void removeToken(Type t) {
         tokens.put(t, tokens.get(t) - 1);
     }
@@ -73,8 +90,13 @@ public class Player {
         //incomplete, do later once patron class is more complete.
     }
 
+    /**
+     * reserves the card instead of buying it. returns false if the player has more than 3 reserved
+     * @param c
+     * @return
+     */
     public boolean buyReservedCard(Card c) {
-        if (tokens.get(Type.WILD) >= 3) {
+        if (cards.get(Type.WILD).size() >= 3) {
             return false;
         }
         ArrayList<Card> temp = cards.get(Type.WILD);
