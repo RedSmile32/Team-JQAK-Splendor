@@ -1,809 +1,809 @@
-"points"   :  "0",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "1",
-"redPrice" : "1",
-"bluePrice" : "1",
-"greenPrice" : "1"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "1",
-"bluePrice" : "0",
-"greenPrice" : "2"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "2",
-"redPrice" : "0",
-"bluePrice" : "0",
-"greenPrice" : "2"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "1",
-"whitePrice" : "0",
-"redPrice" : "3",
-"bluePrice" : "0",
-"greenPrice" : "1"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "0",
-"bluePrice" : "0",
-"greenPrice" : "3"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "1",
-"redPrice" : "1",
-"bluePrice" : "2",
-"greenPrice" : "1"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "2",
-"redPrice" : "1",
-"bluePrice" : "2",
-"greenPrice" : "0"
-
-"points"   :  "1",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "0",
-"bluePrice" : "4",
-"greenPrice" : "0"
-
-"points"   :  "1",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "1",
-"blackPrice" : "0",
-"whitePrice" : "3",
-"redPrice" : "0",
-"bluePrice" : "2",
-"greenPrice" : "2"
-
-"points"   :  "1",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "1",
-"blackPrice" : "2",
-"whitePrice" : "3",
-"redPrice" : "0",
-"bluePrice" : "0",
-"greenPrice" : "3"
-
-"points"   :  "2",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "1",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "2",
-"bluePrice" : "1",
-"greenPrice" : "4"
-
-"points"   :  "2",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "1",
-"blackPrice" : "0",
-"whitePrice" : "5",
-"redPrice" : "0",
-"bluePrice" : "0",
-"greenPrice" : "0"
-
-"points"   :  "2",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "1",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "3",
-"bluePrice" : "0",
-"greenPrice" : "5"
-
-"points"   :  "3",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "1",
-"blackPrice" : "6",
-"whitePrice" : "0",
-"redPrice" : "0",
-"bluePrice" : "0",
-"greenPrice" : "0"
-
-"points"   :  "3",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "2",
-"blackPrice" : "0",
-"whitePrice" : "3",
-"redPrice" : "3",
-"bluePrice" : "3",
-"greenPrice" : "5"
-
-"points"   :  "4",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "2",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "7",
-"bluePrice" : "0",
-"greenPrice" : "0"
-
-"points"   :  "4",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "2",
-"blackPrice" : "3",
-"whitePrice" : "0",
-"redPrice" : "6",
-"bluePrice" : "0",
-"greenPrice" : "3"
-
-"points"   :  "5",
-"discountColor" :  "Type.BLACK",
-"tier"   :  "2",
-"blackPrice" : "3",
-"whitePrice" : "0",
-"redPrice" : "7",
-"bluePrice" : "0",
-"greenPrice" : "0"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "2",
-"whitePrice" : "1",
-"redPrice" : "0",
-"bluePrice" : "0",
-"greenPrice" : "0"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "1",
-"whitePrice" : "1",
-"redPrice" : "2",
-"bluePrice" : "0",
-"greenPrice" : "1"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "1",
-"whitePrice" : "1",
-"redPrice" : "1",
-"bluePrice" : "0",
-"greenPrice" : "1"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "1",
-"bluePrice" : "1",
-"greenPrice" : "3"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "3",
-"whitePrice" : "0",
-"redPrice" : "0",
-"bluePrice" : "0",
-"greenPrice" : "0"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "1",
-"redPrice" : "2",
-"bluePrice" : "0",
-"greenPrice" : "2"
-
-"points"   :  "0",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "2",
-"bluePrice" : "0",
-"greenPrice" : "2"
-
-"points"   :  "1",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "0",
-"blackPrice" : "0",
-"whitePrice" : "0",
-"redPrice" : "4",
-"bluePrice" : "0",
-"greenPrice" : "0"
-
-"points"   :  "1",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "3",
-"bluePrice" : "2",
-"greenPrice" : "2"
-
-"points"   :  "1",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "1",
-"blackPrice" : "3",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "2",
-"greenPrice" : "3"
-
-"points"   :  "2",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "5",
-"redPrice" : "",
-"bluePrice" : "3",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "5",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "1",
-"blackPrice" : "4",
-"whitePrice" : "2",
-"redPrice" : "1",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "6",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "2",
-"blackPrice" : "5",
-"whitePrice" : "3",
-"redPrice" : "3",
-"bluePrice" : "",
-"greenPrice" : "3"
-
-"points"   :  "4",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "7",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "4",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "2",
-"blackPrice" : "3",
-"whitePrice" : "6",
-"redPrice" : "",
-"bluePrice" : "3",
-"greenPrice" : ""
-
-"points"   :  "5",
-"discountColor" :  "Type.BLUE",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "7",
-"redPrice" : "",
-"bluePrice" : "3",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "4",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "4",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "5",
-"discountColor" :  "Type.GREEN",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.RED",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.RED",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.RED",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.RED",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.RED",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.RED",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.RED",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.RED",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "4",
-"discountColor" :  "Type.RED",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "4",
-"discountColor" :  "Type.RED",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "5",
-"discountColor" :  "Type.RED",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "0",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "0",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "1",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "2",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "1",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "3",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "4",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "4",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
-
-"points"   :  "5",
-"discountColor" :  "Type.WHITE",
-"tier"   :  "2",
-"blackPrice" : "",
-"whitePrice" : "",
-"redPrice" : "",
-"bluePrice" : "",
-"greenPrice" : ""
+0
+BLACK
+0
+0
+1
+1
+1
+1
+
+0
+BLACK
+0
+0
+0
+1
+0
+2
+
+0
+BLACK
+0
+0
+2
+0
+0
+2
+
+0
+BLACK
+0
+1
+0
+3
+0
+1
+
+0
+BLACK
+0
+0
+0
+0
+0
+3
+
+0
+BLACK
+0
+0
+1
+1
+2
+1
+
+0
+BLACK
+0
+0
+2
+1
+2
+0
+
+1
+BLACK
+0
+0
+0
+0
+4
+0
+
+1
+BLACK
+1
+0
+3
+0
+2
+2
+
+1
+BLACK
+1
+2
+3
+0
+0
+3
+
+2
+BLACK
+1
+0
+0
+2
+1
+4
+
+2
+BLACK
+1
+0
+5
+0
+0
+0
+
+2
+BLACK
+1
+0
+0
+3
+0
+5
+
+3
+BLACK
+1
+6
+0
+0
+0
+0
+
+3
+BLACK
+2
+0
+3
+3
+3
+5
+
+4
+BLACK
+2
+0
+0
+7
+0
+0
+
+4
+BLACK
+2
+3
+0
+6
+0
+3
+
+5
+BLACK
+2
+3
+0
+7
+0
+0
+
+0
+BLUE
+0
+2
+1
+0
+0
+0
+
+0
+BLUE
+0
+1
+1
+2
+0
+1
+
+0
+BLUE
+0
+1
+1
+1
+0
+1
+
+0
+BLUE
+0
+0
+0
+1
+1
+3
+
+0
+BLUE
+0
+3
+0
+0
+0
+0
+
+0
+BLUE
+0
+0
+1
+2
+0
+2
+
+0
+BLUE
+0
+0
+0
+2
+0
+2
+
+1
+BLUE
+0
+0
+0
+4
+0
+0
+
+1
+BLUE
+1
+0
+0
+3
+2
+2
+
+1
+BLUE
+1
+3
+0
+0
+2
+3
+
+2
+BLUE
+1
+0
+5
+0
+3
+0
+
+2
+BLUE
+1
+0
+0
+0
+5
+0
+
+2
+BLUE
+1
+4
+2
+1
+0
+0
+
+3
+BLUE
+1
+0
+0
+0
+6
+0
+
+3
+BLUE
+2
+5
+3
+3
+0
+3
+
+4
+BLUE
+2
+0
+7
+0
+0
+0
+
+4
+BLUE
+2
+3
+6
+0
+3
+0
+
+5
+BLUE
+2
+0
+7
+0
+3
+0
+
+0
+GREEN
+0
+0
+2
+0
+1
+0
+
+0
+GREEN
+0
+0
+0
+2
+2
+0
+
+0
+GREEN
+0
+0
+1
+0
+3
+1
+
+0
+GREEN
+0
+1
+1
+1
+1
+0
+
+0
+GREEN
+0
+2
+1
+1
+1
+0
+
+0
+GREEN
+0
+2
+0
+2
+1
+0
+
+0
+GREEN
+0
+0
+0
+3
+0
+0
+
+1
+GREEN
+0
+4
+0
+0
+0
+0
+
+1
+GREEN
+1
+0
+3
+3
+0
+2
+
+1
+GREEN
+1
+2
+2
+0
+3
+0
+
+2
+GREEN
+1
+1
+4
+0
+2
+0
+
+2
+GREEN
+1
+0
+0
+0
+0
+5
+
+2
+GREEN
+1
+0
+0
+0
+5
+3
+
+3
+GREEN
+1
+0
+0
+0
+0
+6
+
+3
+GREEN
+2
+3
+5
+3
+3
+0
+
+4
+GREEN
+2
+0
+3
+0
+6
+3
+
+4
+GREEN
+2
+0
+0
+0
+7
+0
+
+5
+GREEN
+2
+0
+0
+0
+7
+3
+
+0
+RED
+0
+0
+3
+0
+0
+0
+
+0
+RED
+0
+3
+1
+1
+0
+0
+
+0
+RED
+0
+0
+0
+0
+2
+1
+
+0
+RED
+0
+2
+2
+0
+0
+1
+
+0
+RED
+0
+1
+2
+0
+1
+1
+
+0
+RED
+0
+1
+1
+0
+1
+1
+
+0
+RED
+0
+0
+2
+2
+0
+0
+
+1
+RED
+0
+0
+4
+0
+0
+0
+
+1
+RED
+1
+3
+0
+2
+3
+0
+
+1
+RED
+1
+3
+2
+2
+0
+0
+
+2
+RED
+1
+0
+1
+0
+4
+2
+
+2
+RED
+1
+5
+3
+0
+0
+0
+
+2
+RED
+1
+5
+0
+0
+0
+0
+
+3
+RED
+1
+0
+0
+6
+0
+0
+
+3
+RED
+2
+3
+3
+0
+5
+3
+
+4
+RED
+2
+0
+0
+0
+0
+7
+
+4
+RED
+2
+0
+0
+3
+3
+6
+
+5
+RED
+2
+0
+0
+3
+0
+7
+
+0
+WHITE
+0
+1
+0
+0
+2
+2
+
+0
+WHITE
+0
+1
+0
+2
+0
+0
+
+0
+WHITE
+0
+1
+0
+1
+1
+1
+
+0
+WHITE
+0
+0
+0
+0
+3
+0
+
+0
+WHITE
+0
+2
+0
+0
+2
+0
+
+0
+WHITE
+0
+1
+0
+1
+1
+2
+
+0
+WHITE
+0
+1
+3
+0
+1
+0
+
+1
+WHITE
+0
+0
+0
+0
+0
+4
+
+1
+WHITE
+1
+2
+0
+2
+0
+3
+
+1
+WHITE
+1
+0
+2
+3
+3
+0
+
+2
+WHITE
+1
+2
+0
+4
+0
+1
+
+2
+WHITE
+1
+0
+0
+5
+0
+0
+
+2
+WHITE
+1
+3
+0
+5
+0
+0
+
+3
+WHITE
+1
+0
+6
+0
+0
+0
+
+3
+WHITE
+2
+3
+0
+5
+3
+3
+
+4
+WHITE
+2
+0
+7
+0
+0
+0
+
+4
+WHITE
+2
+6
+3
+3
+0
+0
+
+5
+WHITE
+2
+7
+3
+0
+0
+0
