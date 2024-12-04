@@ -1,14 +1,14 @@
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
+
 import java.io.*;
 import java.nio.Buffer;
+
 import java.util.*;
+
+
+
 
 public class GamePanel extends JPanel implements MouseListener {
     Player[] players = new Player[4];
@@ -54,4 +54,37 @@ public class GamePanel extends JPanel implements MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
+
+    // a helper function that starts the game when the startgame or new game button is pressed
+    public void startGame(int playerNumber) { //just set playerNumber to 4 if we do not want customizable
+        for (int i = 0; i < playerNumber; i++) {
+            players[i] = new Player(false);
+        }
+        players[0].setP1(true);
+
+        ArrayList<Card> temp = new ArrayList<>();
+        Scanner scan = new Scanner("Image/cards.txt");
+
+        //turn text into cards
+        for (int i = 0; i < 36; i++) {//set this to 90 when the cards.txt file is complete
+            int points = Integer.parseInt(scan.nextLine());
+            Type discountcolor = Type.valueOf(scan.nextLine());
+            int tier = Integer.parseInt(scan.nextLine());
+
+            HashMap<Type, Integer> prices = new HashMap<>();
+            prices.put(Type.BLACK, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.WHITE, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.RED, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.BLUE, Integer.parseInt(scan.nextLine()));
+            prices.put(Type.GREEN, Integer.parseInt(scan.nextLine()));
+            Card aCard = new Card(points, discountcolor, tier, prices);
+            scan.nextLine();
+
+            decks[aCard.getTier()].addCard(aCard);
+        }
+
+
+
+    }
+
 }
