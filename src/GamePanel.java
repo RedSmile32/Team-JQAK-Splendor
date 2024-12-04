@@ -52,7 +52,7 @@ public class GamePanel extends JPanel implements MouseListener {
         for (int i = 0; i<3; i++ ) {
             decks[i] = new Deck(new ArrayList<>());
         }
-        for (int i = 0; i < 36; i++) {//set this to 90 when the cards.txt file is complete
+        for (int i = 0; i < 90; i++) {//set this to 90 when the cards.txt file is complete
             int points = Integer.parseInt(scan.nextLine());
             Type discountcolor = Type.valueOf(scan.nextLine());
             int tier = Integer.parseInt(scan.nextLine());
