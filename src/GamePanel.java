@@ -10,6 +10,8 @@ public class GamePanel extends JPanel implements MouseListener {
     Player[] players = new Player[4];
     Deck[] decks = new Deck[3];
 
+    Patron[] patrons = new Patron[5];
+
     @Override
     public void mouseClicked(MouseEvent e) {
 
@@ -46,10 +48,15 @@ public class GamePanel extends JPanel implements MouseListener {
         Scanner scan = new Scanner("Image/cards.txt");
 
         //turn text into cards
+         // make sure to initialize deck before the loop
+        for (int i = 0; i<3; i++ ) {
+            decks[i] = new Deck(new ArrayList<>());
+        }
         for (int i = 0; i < 36; i++) {//set this to 90 when the cards.txt file is complete
             int points = Integer.parseInt(scan.nextLine());
             Type discountcolor = Type.valueOf(scan.nextLine());
             int tier = Integer.parseInt(scan.nextLine());
+
 
             HashMap<Type, Integer> prices = new HashMap<>();
             prices.put(Type.BLACK, Integer.parseInt(scan.nextLine()));
@@ -62,6 +69,14 @@ public class GamePanel extends JPanel implements MouseListener {
 
             decks[aCard.getTier()].addCard(aCard);
         }
+        //shuffle the decks
+        for (int i = 0; i < 3; i++) {
+            decks[i].shuffle();
+        }
+
+
+
+
 
 
 
