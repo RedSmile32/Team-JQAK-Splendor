@@ -36,7 +36,6 @@ public class Player {
                 }
         }
 
-        //leaving off here.
         ArrayList<Card> tempcardlist = cards.get(c.getDiscountColor());
         tempcardlist.add(c);
         cards.put(c.getDiscountColor(), tempcardlist);

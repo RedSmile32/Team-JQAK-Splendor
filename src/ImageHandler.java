@@ -1,26 +1,36 @@
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class ImageHandler {
-    public static BufferedImage background() {
-        BufferedImage background;
+    static final BufferedImage MENU_BACKGROUND;
+    static {
+        boolean init = false;
+        BufferedImage temp = null;
         try {
-            background = ImageIO.read(ImageHandler.class.getResource("Image/Background.jpg"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            temp = ImageIO.read(ImageHandler.class.getResource("Image/Background.jpg"));
+            init = true;
+        } catch (Exception e) {
+            System.out.println("No image found for background");
         }
-        return background;
+        if (init)
+            MENU_BACKGROUND = temp;
+        else
+            MENU_BACKGROUND = null;
     }
 
-    public static BufferedImage gameBackground() {
-        BufferedImage background;
+    static final BufferedImage GAME_BACKGROUND;
+    static {
+        boolean init = false;
+        BufferedImage temp = null;
         try {
-            background = ImageIO.read(ImageHandler.class.getResource("Image/WoodBackground.png"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            temp = ImageIO.read(ImageHandler.class.getResource("Image/WoodBackground.png"));
+            init = true;
+        } catch (Exception e) {
+            System.out.println("No image found for background");
         }
-        return background;
+        if (init)
+            GAME_BACKGROUND = temp;
+        else
+            GAME_BACKGROUND = null;
     }
-
 }
