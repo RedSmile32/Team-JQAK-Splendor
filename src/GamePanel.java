@@ -94,6 +94,26 @@ public class GamePanel extends JPanel implements MouseListener {
             decks[i].shuffle();
         }
 
+        int tracker = 0;
+
+        //not sure if this will work, only time will tell.
+        //adds patrons to the patron stack after clearing out said stack
+        patrons = new Patron[5];
+        while (patrons[4] != null) {
+            Patron p = Patron.patronList[(int) (Math.random() * 10)];
+            for (int i = 0; i <= tracker; i++) {
+                if (i == tracker) {
+                    patrons[tracker] = p;
+                    tracker++;
+                    break;
+                }
+                if (patrons[i].equals(p)) {
+                    break;
+                }
+
+            }
+        }
+
 
 
 
