@@ -17,7 +17,7 @@ public class MenuPanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
-        g.drawImage(ImageHandler.background(), 0, 0, getWidth(), getHeight(), null);
+        g.drawImage(ImageHandler.MENU_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
         g.setColor(Color.WHITE);
         g.drawString("Click anywhere to start", getWidth()/2 - 10, 20);
     }
