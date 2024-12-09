@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
@@ -25,9 +26,21 @@ public class GamePanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
-        g.drawImage(ImageHandler.gameBackground(), 0, 0, getWidth(), getHeight(), null);
-        g.setColor(Color.WHITE);
-        g.drawString("gamePanel is a go!", 10, 20);
+        g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
+        g.setColor(Color.BLACK);
+        g.fillRect(0, getWidth()/8-10, getWidth()/2, 4);
+        g.fillRect(getWidth()/2-2, 0, 4, 520);
+        g.fillRect(0, 520, getWidth(), 4);
+        g.fillRect(635, 268, 1280, 4);
+        g.fillRect(958, 0, 4, 520);
+
+        g.setColor(Color.YELLOW);
+        g.setFont(new Font("SansSerif", Font.PLAIN, 40));
+        g.drawString("Nobles", 40, 80);
+        g.drawString("Player 1: " + players[0].getScore(), 640, 40);
+        g.drawString("Player 2: " + players[1].getScore(), 970, 40);
+        g.drawString("Player 3: " + players[2].getScore(), 640, 310);
+        g.drawString("Player 4: " + players[3].getScore(), 970, 310);
     }
 
     Patron[] patrons = new Patron[5];
