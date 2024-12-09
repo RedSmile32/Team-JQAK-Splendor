@@ -24,10 +24,23 @@ public class GamePanel extends JPanel implements MouseListener {
     int activePlayer;
     int turnState;
     int winner;
+    BufferedImage green_token;
+    BufferedImage wild_token;
+    BufferedImage red_token;
+    BufferedImage blue_token;
+    BufferedImage white_token;
+    BufferedImage black_token;
 
     public GamePanel() {
         try {
             title = ImageIO.read(GamePanel.class.getResource("Image/SplendorTitle.png"));
+            green_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorGreen1.jpg")));
+            wild_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorWild.jpg")));
+            red_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorRed.jpg")));
+            blue_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorBlue.jpg")));
+            white_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorWhite.jpg")));
+            black_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorBlack.jpg")));
+            
         } catch (Exception e) {
             System.out.println("Resource Location Failure");
         }
@@ -48,6 +61,15 @@ public class GamePanel extends JPanel implements MouseListener {
 
     public void paint(Graphics g) {
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
+        
+        
+        g.drawImage(green_token, 80, 540, 100, 100, null);
+        g.drawImage(black_token, 200, 540, 100, 100, null);
+        g.drawImage(red_token, 320, 540, 100, 100, null);
+        g.drawImage(blue_token, 440, 540, 100, 100, null);
+        g.drawImage(white_token, 560, 540, 100, 100, null);
+        g.drawImage(wild_token, 680, 540, 100, 100, null);
+        //draws all the tokens
 
         g.setColor(Color.BLACK);
         g.fillRect(0, getWidth()/8-10, getWidth()/2, 4);
