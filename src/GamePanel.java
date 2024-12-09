@@ -1,13 +1,14 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import java.awt.image.BufferedImage;
-
 import java.io.*;
 import java.nio.Buffer;
-
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.*;
 
 
@@ -22,19 +23,32 @@ public class GamePanel extends JPanel implements MouseListener {
     ArrayList<Patron> gamePatrons;
     int activePlayer;
     int turnState;
+    int winner;
 
     public GamePanel() {
+        try {
+            title = ImageIO.read(GamePanel.class.getResource("Image/SplendorTitle.png"));
+        } catch (Exception e) {
+            System.out.println("Resource Location Failure");
+        }
         addMouseListener(this);
+
+
+        //Game initialization occurs here
 
         players[0] = new Player(true);
         players[1] = new Player(false);
         players[2] = new Player(false);
         players[3] = new Player(false);
 
+
+        decks[0] = new Deck(new ArrayList<Card>());
+
     }
 
     public void paint(Graphics g) {
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
+
         g.setColor(Color.BLACK);
         g.fillRect(0, getWidth()/8-10, getWidth()/2, 4);
         g.fillRect(getWidth()/2-2, 0, 4, 520);
@@ -49,6 +63,7 @@ public class GamePanel extends JPanel implements MouseListener {
         g.drawString("Player 2: " + players[1].getScore(), 970, 40);
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
         g.drawString("Player 4: " + players[3].getScore(), 970, 310);
+
     }
 
     Patron[] patrons = new Patron[5];
