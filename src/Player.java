@@ -8,6 +8,15 @@ public class Player {
     Boolean p1;
 
     public Player(Boolean isP1) {
+        cards = new HashMap<>();
+        for(Type type: Type.values()) {
+            cards.put(type, new ArrayList<Card>());
+        }
+        tokens = new HashMap<>();
+        for(Type type: Type.values()) {
+            tokens.put(type, 0);
+        }
+        patrons = new ArrayList<>();
         p1 = isP1;
     }
 
