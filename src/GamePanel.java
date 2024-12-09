@@ -24,10 +24,50 @@ public class GamePanel extends JPanel implements MouseListener {
     int activePlayer;
     int turnState;
     int winner;
+    BufferedImage green_token;
+    BufferedImage wild_token;
+    BufferedImage red_token;
+    BufferedImage blue_token;
+    BufferedImage white_token;
+    BufferedImage black_token;
+    int greennum = 7;
+    int wildnum = 5;
+    int rednum = 7;
+    int bluenum = 7;
+    int whitenum = 7;
+    int blacknum = 7;
+    
+    BufferedImage Patron1;
+    BufferedImage Patron2;
+    BufferedImage Patron3;
+    BufferedImage Patron4;
+    BufferedImage Patron5;
+    
+    
+    BufferedImage Level1Back;
+    BufferedImage Level2Back;
+    BufferedImage Level3Back;
 
     public GamePanel() {
         try {
             title = ImageIO.read(GamePanel.class.getResource("Image/SplendorTitle.png"));
+            green_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorGreen1.jpg")));
+            wild_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorWild.jpg")));
+            red_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorRed.jpg")));
+            blue_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorBlue.jpg")));
+            white_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorWhite.jpg")));
+            black_token = ImageIO.read(GamePanel.class.getResource(("/Image/SplendorBlack.jpg")));
+            
+            Patron1 = ImageIO.read(GamePanel.class.getResource(("/PatronFolder/patron1.png")));
+            Patron2 = ImageIO.read(GamePanel.class.getResource(("/PatronFolder/patron2.png")));
+            Patron3 = ImageIO.read(GamePanel.class.getResource(("/PatronFolder/patron3.png")));
+            Patron4 = ImageIO.read(GamePanel.class.getResource(("/PatronFolder/patron4.png")));
+            Patron5 = ImageIO.read(GamePanel.class.getResource(("/PatronFolder/patron5.png")));
+            
+            
+            Level1Back = ImageIO.read(GamePanel.class.getResource(("/Image/Level1Back.jpg")));
+            Level2Back = ImageIO.read(GamePanel.class.getResource(("/Image/Level2Back.jpg")));
+            Level3Back = ImageIO.read(GamePanel.class.getResource(("/Image/Level3Back.jpg")));
         } catch (Exception e) {
             System.out.println("Resource Location Failure");
         }
@@ -47,8 +87,73 @@ public class GamePanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
-        g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
-
+        g.setColor(Color.YELLOW);
+        g.setFont(new Font("SansSerif", Font.PLAIN, 40));
+    	g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
+        
+        g.drawImage(green_token, 80, 540, 100, 100, null);
+        g.drawString(Integer.toString(greennum), 120, 680);
+        g.drawImage(black_token, 200, 540, 100, 100, null);
+        g.drawString(Integer.toString(blacknum), 240, 680);
+        g.drawImage(red_token, 320, 540, 100, 100, null);
+        g.drawString(Integer.toString(rednum), 360, 680);
+        g.drawImage(blue_token, 440, 540, 100, 100, null);
+        g.drawString(Integer.toString(bluenum), 480, 680);
+        g.drawImage(white_token, 560, 540, 100, 100, null);
+        g.drawString(Integer.toString(whitenum), 600, 680);
+        g.drawImage(wild_token, 680, 540, 100, 100, null);
+        g.drawString(Integer.toString(wildnum), 720, 680);
+        //draws all the tokens
+        
+        g.drawImage(Patron1, 80, 50, 100, 100, null);
+        g.drawImage(Patron2, 180, 50, 100, 100, null);
+        g.drawImage(Patron3, 280, 50, 100, 100, null);
+        g.drawImage(Patron4, 380, 50, 100, 100, null);
+        g.drawImage(Patron5, 480, 50, 100, 100, null);
+        //draws all the patrons
+        
+        
+        g.drawImage(Level1Back, 0, 150, 90, 110, null);
+        g.drawImage(Level2Back, 0, 265, 90, 110, null);
+        g.drawImage(Level3Back, 0, 380, 90, 110, null);
+        //draws the card backs
+        
+        //draws the tokens next to player 1
+        g.drawImage(green_token, 640, 50, 35, 35, null);
+        g.drawImage(red_token, 640, 90, 35, 35, null);
+        g.drawImage(black_token, 640, 130, 35, 35, null);
+        g.drawImage(white_token, 710, 50, 35, 35, null);
+        g.drawImage(blue_token, 710, 90, 35, 35, null);
+        g.drawImage(wild_token, 710, 130, 35, 35, null);
+        
+      //draws the tokens next to player 3
+        g.drawImage(green_token, 640, 310, 35, 35, null);
+        g.drawImage(red_token, 640, 350, 35, 35, null);
+        g.drawImage(black_token, 640, 390, 35, 35, null);
+        g.drawImage(white_token, 710, 310, 35, 35, null);
+        g.drawImage(blue_token, 710, 350, 35, 35, null);
+        g.drawImage(wild_token, 710, 390, 35, 35, null);
+        
+        
+      //draws the tokens next to player 2
+        g.drawImage(green_token, 960, 50, 35, 35, null);
+        g.drawImage(red_token, 960, 90, 35, 35, null);
+        g.drawImage(black_token, 960, 130, 35, 35, null);
+        g.drawImage(white_token, 1030, 50, 35, 35, null);
+        g.drawImage(blue_token, 1030, 90, 35, 35, null);
+        g.drawImage(wild_token, 1030, 130, 35, 35, null);
+        
+        
+        //draws the tokens next to player 4
+        g.drawImage(green_token, 960, 310, 35, 35, null);
+        g.drawImage(red_token, 960, 350, 35, 35, null);
+        g.drawImage(black_token, 960, 390, 35, 35, null);
+        g.drawImage(white_token, 1030, 310, 35, 35, null);
+        g.drawImage(blue_token, 1030, 350, 35, 35, null);
+        g.drawImage(wild_token, 1030, 390, 35, 35, null);
+        
+        
+        
         g.setColor(Color.BLACK);
         g.fillRect(0, getWidth()/8-10, getWidth()/2, 4);
         g.fillRect(getWidth()/2-2, 0, 4, 520);
@@ -58,7 +163,7 @@ public class GamePanel extends JPanel implements MouseListener {
 
         g.setColor(Color.YELLOW);
         g.setFont(new Font("SansSerif", Font.PLAIN, 40));
-        g.drawString("Nobles", 40, 80);
+        g.drawString("Nobles", 40, 40);
         g.drawString("Player 1: " + players[0].getScore(), 640, 40);
         g.drawString("Player 2: " + players[1].getScore(), 970, 40);
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
