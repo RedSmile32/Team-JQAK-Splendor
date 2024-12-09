@@ -1,10 +1,11 @@
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
-
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.Buffer;
-
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.*;
 
 
