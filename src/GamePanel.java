@@ -25,6 +25,12 @@ public class GamePanel extends JPanel implements MouseListener {
 
     public GamePanel() {
         addMouseListener(this);
+
+        players[0] = new Player(true);
+        players[1] = new Player(false);
+        players[2] = new Player(false);
+        players[3] = new Player(false);
+
     }
 
     public void paint(Graphics g) {
