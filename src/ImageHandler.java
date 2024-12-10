@@ -49,4 +49,15 @@ public class ImageHandler {
 
         return image;
     }
+
+    public static BufferedImage endBackground() {
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(ImageHandler.class.getResource("Image/EndPanelBackground.png"));
+        } catch (Exception e) {
+            System.out.println("Image Not Found");
+        }
+
+        return image;
+    }
 }
