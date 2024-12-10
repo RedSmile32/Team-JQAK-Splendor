@@ -36,13 +36,10 @@ public class GamePanel extends JPanel implements MouseListener {
 
         //Game initialization occurs here
 
-        players[0] = new Player(true);
-        players[1] = new Player(false);
-        players[2] = new Player(false);
-        players[3] = new Player(false);
-
-
-        decks[0] = new Deck(new ArrayList<Card>());
+        players = new Player[4];
+        for(int i = 0; i < 4; i++)
+            players[i] = new Player(false);
+        players[0].setP1(true);
 
     }
 
@@ -64,6 +61,14 @@ public class GamePanel extends JPanel implements MouseListener {
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
         g.drawString("Player 4: " + players[3].getScore(), 970, 310);
 
+        HashMap<Type, Integer> tester = new HashMap<>();
+        tester.put(Type.RED, 1);
+        tester.put(Type.BLUE, 2);
+        tester.put(Type.GREEN, 3);
+        tester.put(Type.BLACK, 4);
+        tester.put(Type.WHITE, 5);
+        Card c = new Card(1, Type.WILD, 0, tester);
+        c.draw(g, 200, 200, 100);
     }
 
     Patron[] patrons = new Patron[5];

@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.HashMap;
 
 public class Patron {
@@ -82,6 +83,10 @@ public class Patron {
         temp.put(Type.BLUE, 0);
         patronList[9] = new Patron(temp, "string goes here, why do we need a string again?");
 
+
+    }
+
+    public void draw(Graphics g, int x, int y, int scale) {
 
     }
 }

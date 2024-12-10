@@ -1,4 +1,6 @@
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.Objects;
 import javax.imageio.ImageIO;
 
 public class ImageHandler {
@@ -32,5 +34,19 @@ public class ImageHandler {
             GAME_BACKGROUND = temp;
         else
             GAME_BACKGROUND = null;
+    }
+
+    public static BufferedImage getTokenImage(Type type) {
+        boolean b = false;
+        BufferedImage image = null;
+        try {
+            System.out.println(type + ".png");
+            image = ImageIO.read(ImageHandler.class.getResource("Image/" + type + ".png"));
+            b = true;
+        } catch (Exception e) {
+            System.out.println("Image " + type + " Not Found");
+        }
+
+        return image;
     }
 }
