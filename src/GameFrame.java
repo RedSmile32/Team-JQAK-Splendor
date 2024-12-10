@@ -32,4 +32,18 @@ public class GameFrame extends JFrame {
         add(gamePanel);
         setVisible(true);
     }
+
+    public void endGame(HashMap<Integer, Integer> plrData, int winner) {
+        remove(menuPanel);
+        endPanel = new EndPanel(plrData, winner);
+        add(endPanel);
+        setVisible(true);
+    }
+
+    public void mainMenu() {
+        remove(endPanel);
+        menuPanel = new MenuPanel();
+        add(menuPanel);
+        setVisible(true);
+    }
 }
