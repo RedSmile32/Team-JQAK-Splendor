@@ -59,13 +59,14 @@ public class GamePanel extends JPanel implements MouseListener {
         for(int i = 0; i < 4; i++) {
             int numTimes = 0;
             Player current = players[i];
-            for(Type t: Type.values()) {
-                g.drawImage(ImageHandler.getTokenImage(t), 640+(327*(i%2))+30*numTimes, 230+(250*(i/2)), 30, 30, null);
+            for (Type t : Type.values()) {
+                g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
                 numTimes++;
                 g.setFont(new Font("SansSerif", Font.PLAIN, 18));
                 g.setColor(Color.BLACK);
-                g.drawString(players[i].tokens.get(t)+"", 620+(327*(i%2))+30*numTimes, 225+(250*(i/2)));                                
-                }
+                g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
+            }
+        }
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {

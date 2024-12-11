@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
 
 public class GameFrame extends JFrame {
     static final int WIDTH = 1280;
@@ -7,6 +8,7 @@ public class GameFrame extends JFrame {
     Dimension size;
     private MenuPanel menuPanel;
     private GamePanel gamePanel;
+    private EndPanel endPanel;
 
     public GameFrame(String framename) {
         super(framename);
