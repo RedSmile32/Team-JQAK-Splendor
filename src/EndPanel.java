@@ -64,7 +64,7 @@ public class EndPanel extends JPanel implements MouseListener {
         int x = e.getX();
         int y = e.getY();
         System.out.println(x + " " + y);
-        if (x >= 38 && x <= 847 && y >= 30 && y <= 660) {
+        if (x >= 38 && x <= 847 && y >= 437 && y <= 660) {
             System.out.print("Play Again");
 //            remove(this);
             Splendor.startGame();
