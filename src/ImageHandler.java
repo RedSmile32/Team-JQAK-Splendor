@@ -40,7 +40,6 @@ public class ImageHandler {
         boolean b = false;
         BufferedImage image = null;
         try {
-            System.out.println(type + ".png");
             image = ImageIO.read(ImageHandler.class.getResource("Image/" + type + ".png"));
             b = true;
         } catch (Exception e) {
