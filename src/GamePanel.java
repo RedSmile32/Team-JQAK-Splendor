@@ -81,6 +81,9 @@ public class GamePanel extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
 
+
+            players[0].buyCard(decks[0].cardList.get(0));
+
     }
 
     @Override
@@ -107,10 +110,14 @@ public class GamePanel extends JPanel implements MouseListener {
 
     // a helper function that starts the game when the startgame or new game button is pressed
     public void startGame(int playerNumber) { //just set playerNumber to 4 if we do not want customizable
+
+
+
         for (int i = 0; i < playerNumber; i++) {
             players[i] = new Player(false);
         }
         players[0].setP1(true);
+        activePlayer = 0;
 
         ArrayList<Card> temp = new ArrayList<>();
 
@@ -172,11 +179,15 @@ public class GamePanel extends JPanel implements MouseListener {
             }
         }
 
+        jonathantestingfuction();
 
-
-
-
-
+    }
+    public void jonathantestingfuction() {
+        for (int i = 0; i < 20; i++) {
+            for (Type f: Type.values()) {
+                players[0].addToken(f);
+            }
+        }
 
     }
 
