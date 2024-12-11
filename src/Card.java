@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.nio.Buffer;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Card {
@@ -29,13 +30,22 @@ public class Card {
         flipped = !flipped;
     }
     public int getPriceByColor(Type t) {
-        return price.get(t);
+        return price.getOrDefault(t, 0);
     }
 
     public int getPoints() {
         return points;
     }
     public int getTier() {return tier;}
+
+    public ArrayList<Type> getNonZeroTypes() {
+        ArrayList<Type> nonZeros = new ArrayList<Type>();
+        for(Type t: Type.values()) {
+            if(price.getOrDefault(t, 0)!=0)
+                nonZeros.add(t);
+        }
+        return nonZeros;
+    }
 
     public void draw(Graphics g, int x, int y, int scale) {
         if(!flipped) {
