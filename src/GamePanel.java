@@ -6,7 +6,6 @@ import javax.swing.*;
 
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.Buffer;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.*;
@@ -35,11 +34,7 @@ public class GamePanel extends JPanel implements MouseListener {
 
 
         //Game initialization occurs here
-
-        players = new Player[4];
-        for(int i = 0; i < 4; i++)
-            players[i] = new Player(false);
-        players[0].setP1(true);
+        startGame(4);
 
     }
 
@@ -48,9 +43,9 @@ public class GamePanel extends JPanel implements MouseListener {
 
         g.setColor(Color.BLACK);
         g.fillRect(0, getWidth()/8-10, getWidth()/2, 4);
-        g.fillRect(getWidth()/2-2, 0, 4, 520);
-        g.fillRect(0, 520, getWidth(), 4);
-        g.fillRect(635, 268, 1280, 4);
+        g.fillRect(getWidth()/2-2, 0, 4, getHeight());
+        g.fillRect(630, 520, getWidth(), 4);
+        g.fillRect(630, 268, 1280, 4);
         g.fillRect(958, 0, 4, 520);
 
         g.setColor(Color.YELLOW);
@@ -61,15 +56,6 @@ public class GamePanel extends JPanel implements MouseListener {
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
         g.drawString("Player 4: " + players[3].getScore(), 970, 310);
 
-        HashMap<Type, Integer> p = new HashMap<>();
-        p.put(Type.BLUE, 4);
-        Card c = new Card(3, Type.RED, 0, p);
-        players[0].addToken(Type.BLUE);
-        players[0].addToken(Type.BLUE);
-        players[0].addToken(Type.BLUE);
-        players[0].addToken(Type.BLUE);
-        System.out.println(players[0].buyCard(c));
-
         for(int i = 0; i < 4; i++) {
             int numTimes = 0;
             Player current = players[i];
@@ -78,13 +64,13 @@ public class GamePanel extends JPanel implements MouseListener {
                 numTimes++;
                 g.setFont(new Font("SansSerif", Font.PLAIN, 18));
                 g.setColor(Color.BLACK);
-                g.drawString(players[i].tokens.get(t)+"", 620+(327*(i%2))+30*numTimes, 225+(250*(i/2)));
-
-                ArrayList<Card> currentCards = current.cards.get(t);
-                if(currentCards.size()>0) {
-                    Card top = currentCards.getFirst();
-                    top.draw(g, 0, 0, 100);
+                g.drawString(players[i].tokens.get(t)+"", 620+(327*(i%2))+30*numTimes, 225+(250*(i/2)));                                
                 }
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                decks[i].cardList.get(j).draw(g, 100 * j + 200, 130 * i + 230, 60);
+
             }
         }
     }
@@ -116,6 +102,8 @@ public class GamePanel extends JPanel implements MouseListener {
 
     }
 
+
+
     // a helper function that starts the game when the startgame or new game button is pressed
     public void startGame(int playerNumber) { //just set playerNumber to 4 if we do not want customizable
         for (int i = 0; i < playerNumber; i++) {
@@ -124,13 +112,23 @@ public class GamePanel extends JPanel implements MouseListener {
         players[0].setP1(true);
 
         ArrayList<Card> temp = new ArrayList<>();
-        Scanner scan = new Scanner("Image/cards.txt");
+
+        File file=new File("src/Image/cards.txt");
+        Scanner scan;
+        try {
+            scan = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         //turn text into cards
          // make sure to initialize deck before the loop
         for (int i = 0; i<3; i++ ) {
             decks[i] = new Deck(new ArrayList<>());
         }
+
+
+
         for (int i = 0; i < 90; i++) {//set this to 90 when the cards.txt file is complete
             int points = Integer.parseInt(scan.nextLine());
             Type discountcolor = Type.valueOf(scan.nextLine());
