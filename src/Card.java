@@ -63,9 +63,9 @@ public class Card {
                 int p = price.getOrDefault(t, 0);
                 if (p != 0) {
                     BufferedImage tokenImage = ImageHandler.getTokenImage(t);
-                    g.drawImage(tokenImage, (x + (scale) * ((p - 1) / 5)) + (scale / 12), (int) ((y + (scale) * ((p - 1) / 8)) + 1.65 * (scale) - numTimes * (scale / 4)), scale / 4, scale / 4, null);
+                    g.drawImage(tokenImage, (x) + (scale / 12), (int) ((y + (scale) * ((p - 1) / 8)) + 1.65 * (scale) - numTimes * (scale / 4)), scale / 4, scale / 4, null);
                     g.setColor(Color.BLACK);
-                    g.drawString(p + "", (int) ((x + (scale) * ((p - 1) / 5)) + (scale / 2.7)), (int) ((y + (scale) * ((p - 1) / 8)) + 1.825 * scale - numTimes * (scale / 4)));
+                    g.drawString(p + "", (int) ((x) + (scale / 2.7)), (int) ((y + (scale) * ((p - 1) / 8)) + 1.825 * scale - numTimes * (scale / 4)));
                     numTimes++;
                 }
             }
