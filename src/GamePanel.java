@@ -10,8 +10,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.*;
 
-import static java.awt.Font.SANS_SERIF;
-
 
 public class GamePanel extends JPanel implements MouseListener {
     Player[] players = new Player[4];
@@ -39,6 +37,15 @@ public class GamePanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
+        for(int j = 0; j < 15; j++) {
+            players[0].addToken(Type.BLUE);
+        }
+
+        HashMap<Type, Integer> prices = new HashMap<>();
+        prices.put(Type.BLUE, 5);
+        Card cw = new Card(3, Type.BLUE, 1, prices);
+        System.out.println(players[0].buyCard(cw));
+
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(Color.BLACK);
@@ -56,8 +63,15 @@ public class GamePanel extends JPanel implements MouseListener {
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
         g.drawString("Player 4: " + players[3].getScore(), 970, 310);
 
+
+
         for(int i = 0; i < 4; i++) {
             int numTimes = 0;
+
+
+
+            System.out.println(players[1].tokens.get(Type.BLUE));
+
             Player current = players[i];
             for (Type t : Type.values()) {
                 g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
@@ -65,6 +79,13 @@ public class GamePanel extends JPanel implements MouseListener {
                 g.setFont(new Font("SansSerif", Font.PLAIN, 18));
                 g.setColor(Color.BLACK);
                 g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
+
+                ArrayList<Card> c = current.cards.get(t);
+                Card card;
+                if(c.size() > 0) {
+                    card = c.getFirst();
+                    card.draw(g, 0, 0, 30);
+                }
             }
         }
 

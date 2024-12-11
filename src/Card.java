@@ -48,7 +48,7 @@ public class Card {
     }
 
     public void draw(Graphics g, int x, int y, int scale) {
-        if(!flipped) {
+        if(!flipped || points != -1 || discountColor != Type.WILD) {
             Color c = g.getColor();
             Font f = g.getFont();
 
@@ -79,7 +79,7 @@ public class Card {
                     numTimes++;
                 }
             }
-        } else {
+        } else if (points != -1 || discountColor != Type.WILD) {
             if (tier.equals(0)) {
                 g.setColor(Color.GREEN);
             } else if (tier.equals(1)) {
