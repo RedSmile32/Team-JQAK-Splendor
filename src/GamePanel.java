@@ -20,6 +20,24 @@ public class GamePanel extends JPanel implements MouseListener {
     BufferedImage title;
     ArrayList<Patron> gamePatrons;
     int activePlayer;
+
+    /**
+     * turnState is a variable that determines the state of the current turn in case the turn requires multiple clicks.
+     * For turns that involve a single click:
+     *     - To buy a card, if turnState = 0 and a card is clicked on, the game checks if the card can be bought and
+     *     buys it and moves on if it can. If it can't, turnState is set to 0 and the turn is restarted.
+     *     - To buy a reserved card, if turnState = 0 and the reserved card slot is clicked on, turnState is set to 1
+     *     and a popup opens allowing the player to select the reserved card they want to buy. If they can, the card is
+     *     bought and next player gets their turn. If it can't, turnState is set to 0 and the turn restarts.
+     * For turns that involve more than 1 click:
+     *     - When a token that is in the game inventory is clicked, the token is given to the player if it can be and
+     *     turnState is set to 2. Then, two things can happen:
+     *         - If a token of the same type is selected, the player is given a token and the turn moves on.
+     *             - If there aren't enough, the token already given is taken away and the player is prompted to make
+     *             another move.
+ *             - If a token of a different type is selected, turnState is set to 3 and the player is given it. Another
+     *             token is then selected and then the turn moves to the next player.
+     */
     int turnState;
     int winner;
 
@@ -86,7 +104,7 @@ public class GamePanel extends JPanel implements MouseListener {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
-                decks[i].cardList.get(j).draw(g, 100 * j + 200, 130 * i + 230, 60);
+                decks[2-i].cardList.get(j).draw(g, 100 * j + 200, 130 * i + 230, 60);
 
             }
         }
@@ -102,7 +120,15 @@ public class GamePanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
 
+        if(turnState == 0) {
+            Dimension d;
+
+        }
+        System.out.println(e);
+        repaint();
     }
 
     @Override
