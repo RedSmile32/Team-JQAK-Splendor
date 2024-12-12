@@ -49,10 +49,10 @@ public class GamePanel extends JPanel implements MouseListener {
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(Color.BLACK);
-        g.fillRect(0, getWidth()/8-10, getWidth()/2, 4);
-        g.fillRect(getWidth()/2-2, 0, 4, getHeight());
-        g.fillRect(630, 520, getWidth(), 4);
-        g.fillRect(630, 268, 1280, 4);
+        g.fillRect(0, 150, getWidth()/2, 4);
+        g.fillRect(631, 0, 4, getHeight());
+        g.fillRect(635, 520, 1280, 4);
+        g.fillRect(635, 268, 1280, 4);
         g.fillRect(958, 0, 4, 520);
 
         g.setColor(Color.YELLOW);
@@ -71,28 +71,28 @@ public class GamePanel extends JPanel implements MouseListener {
             Player current = players[i];
             int numCardsDrawn = 0;
             for (Type t : Type.values()) {
-                if (t != Type.WILD) {
-                    g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
-                    numTimes++;
-                    g.setFont(new Font("SansSerif", Font.PLAIN, 18));
-                    g.setColor(Color.BLACK);
-                    g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
+                g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
+                numTimes++;
+                g.setFont(new Font("SansSerif", Font.PLAIN, 18));
+                g.setColor(Color.BLACK);
+                g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
 
+                if(!t.equals(Type.WILD)) {
                     ArrayList<Card> c = current.cards.get(t);
                     System.out.println(c);
                     Card card;
-                    System.out.println(20*i);
+                    System.out.println(20 * i);
                     if (c.size() > 0) {
                         card = c.getFirst();
-                        card.draw(g, 640 + (50 * numCardsDrawn) + (325*(i%2)), 100 + 250*(i/2), 30);
-                        g.drawString( c.size() + "x", 650 + (50 * numCardsDrawn) + (325*(i%2)), 95 + 250*(i/2));
+                        card.draw(g, 640 + (50 * numCardsDrawn) + (325 * (i % 2)), 100 + 250 * (i / 2), 30);
+                        g.drawString(c.size() + "x", 650 + (50 * numCardsDrawn) + (325 * (i % 2)), 95 + 250 * (i / 2));
                     } else {
-                        g.fillRect(640 + (50 * numCardsDrawn) + (325*(i%2)), 100  + 250*(i/2), 45, 60);
-                        g.drawImage(ImageHandler.getTokenImage(t), 640 + (50 * numCardsDrawn) + (325*(i%2)), 108 + 250*(i/2), 45, 45, null);
-                        g.drawString( "0x", 650 + (50 * numCardsDrawn) + (325*(i%2)), 95 + 250*(i/2));
+                        g.fillRect(640 + (50 * numCardsDrawn) + (325 * (i % 2)), 100 + 250 * (i / 2), 45, 60);
+                        g.drawImage(ImageHandler.getTokenImage(t), 640 + (50 * numCardsDrawn) + (325 * (i % 2)), 108 + 250 * (i / 2), 45, 45, null);
+                        g.drawString("0x", 650 + (50 * numCardsDrawn) + (325 * (i % 2)), 95 + 250 * (i / 2));
                     }
+                    numCardsDrawn++;
                 }
-                numCardsDrawn++;
             }
         }
 
