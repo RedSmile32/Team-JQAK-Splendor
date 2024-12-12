@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.sql.Array;
 import java.util.*;
 
 
@@ -37,22 +38,13 @@ public class GamePanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
-        for(int j = 0; j < 15; j++) {
-            players[0].addToken(Type.BLUE);
-        }
-
-        HashMap<Type, Integer> prices = new HashMap<>();
-        prices.put(Type.BLUE, 5);
-        Card cw = new Card(3, Type.BLUE, 1, prices);
-        System.out.println(players[0].buyCard(cw));
-
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(Color.BLACK);
-        g.fillRect(0, getWidth()/8-10, getWidth()/2, 4);
-        g.fillRect(getWidth()/2-2, 0, 4, getHeight());
-        g.fillRect(630, 520, getWidth(), 4);
-        g.fillRect(630, 268, 1280, 4);
+        g.fillRect(0, 150, getWidth()/2, 4);
+        g.fillRect(631, 0, 4, getHeight());
+        g.fillRect(635, 520, 1280, 4);
+        g.fillRect(635, 268, 1280, 4);
         g.fillRect(958, 0, 4, 520);
 
         g.setColor(Color.YELLOW);
@@ -63,36 +55,32 @@ public class GamePanel extends JPanel implements MouseListener {
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
         g.drawString("Player 4: " + players[3].getScore(), 970, 310);
 
-
-
         for(int i = 0; i < 4; i++) {
             int numTimes = 0;
 
             Player current = players[i];
             int numCardsDrawn = 0;
             for (Type t : Type.values()) {
-                if (t != Type.WILD) {
-                    g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
-                    numTimes++;
-                    g.setFont(new Font("SansSerif", Font.PLAIN, 18));
-                    g.setColor(Color.BLACK);
-                    g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
+                g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
+                numTimes++;
+                g.setFont(new Font("SansSerif", Font.PLAIN, 18));
+                g.setColor(Color.BLACK);
+                g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
 
+                if(!t.equals(Type.WILD)) {
                     ArrayList<Card> c = current.cards.get(t);
-                    System.out.println(c);
                     Card card;
-                    System.out.println(20*i);
                     if (c.size() > 0) {
                         card = c.getFirst();
-                        card.draw(g, 640 + (50 * numCardsDrawn) + (325*(i%2)), 100 + 250*(i/2), 30);
-                        g.drawString( c.size() + "x", 650 + (50 * numCardsDrawn) + (325*(i%2)), 95 + 250*(i/2));
+                        card.draw(g, 640 + (50 * numCardsDrawn) + (325 * (i % 2)), 100 + 250 * (i / 2), 30);
+                        g.drawString(c.size() + "x", 650 + (50 * numCardsDrawn) + (325 * (i % 2)), 95 + 250 * (i / 2));
                     } else {
-                        g.fillRect(640 + (50 * numCardsDrawn) + (325*(i%2)), 100  + 250*(i/2), 45, 60);
-                        g.drawImage(ImageHandler.getTokenImage(t), 640 + (50 * numCardsDrawn) + (325*(i%2)), 108 + 250*(i/2), 45, 45, null);
-                        g.drawString( "0x", 650 + (50 * numCardsDrawn) + (325*(i%2)), 95 + 250*(i/2));
+                        g.fillRect(640 + (50 * numCardsDrawn) + (325 * (i % 2)), 100 + 250 * (i / 2), 45, 60);
+                        g.drawImage(ImageHandler.getTokenImage(t), 640 + (50 * numCardsDrawn) + (325 * (i % 2)), 108 + 250 * (i / 2), 45, 45, null);
+                        g.drawString("0x", 650 + (50 * numCardsDrawn) + (325 * (i % 2)), 95 + 250 * (i / 2));
                     }
+                    numCardsDrawn++;
                 }
-                numCardsDrawn++;
             }
         }
 
@@ -101,6 +89,12 @@ public class GamePanel extends JPanel implements MouseListener {
                 decks[i].cardList.get(j).draw(g, 100 * j + 200, 130 * i + 230, 60);
 
             }
+        }
+
+        g.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        for(int i = 0; i < Type.values().length; i++) {
+            g.drawImage(ImageHandler.getTokenImage(Type.values()[i]), 640+(70 * i), 540, 70, 70, null);
+            g.drawString(gameTokens.get(Type.values()[i])+"", 665+(70 * i), 640);
         }
     }
 
@@ -200,12 +194,13 @@ public class GamePanel extends JPanel implements MouseListener {
             }
         }
 
-
-
-
-
-
-
+        gameTokens = new HashMap<>();
+        for(Type t: Type.values()) {
+            if(t == Type.WILD)
+                gameTokens.put(t, 5);
+            else
+                gameTokens.put(t, 7);
+        }
     }
 
 }
