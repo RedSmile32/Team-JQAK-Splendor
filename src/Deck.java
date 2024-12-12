@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
     ArrayList<Card> cardList;
@@ -10,11 +11,7 @@ public class Deck {
     }
 
     public void shuffle() {
-        ArrayList<Card> result = new ArrayList<>();
-        for (Card n: cardList) {
-            result.add((int) (Math.random() * result.size()), n);
-        }
-        cardList = result;
+        Collections.shuffle(cardList);
     }
 
     public void addCard(Card c) {
