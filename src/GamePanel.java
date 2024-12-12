@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     BufferedImage title;
     ArrayList<Patron> gamePatrons;
     int activePlayer;
+    Type prevClicked;
 
     /**
      * turnState is a variable that determines the state of the current turn in case the turn requires multiple clicks.
@@ -58,6 +59,9 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     }
 
     public void paint(Graphics g) {
+        if(turnState==0) {
+            prevClicked=null;
+        }
         for(Type t: Type.values()) {
             if(t != Type.WILD) {
                 int sum = 0;
@@ -198,13 +202,79 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
                 }
             } else if(clicked!=null) {
                 if(gameTokens.get(clicked)>0) {
-                    gameTokens.put(clicked, gameTokens.get(clicked)-1);
+                    if(clicked != Type.WILD || players[activePlayer].tokens.get(Type.WILD) < 3)
+                        gameTokens.put(clicked, gameTokens.get(clicked)-1);
+                    if(clicked==Type.WILD && players[activePlayer].cards.get(Type.WILD).size()<3) {
+                        players[activePlayer].addToken(clicked);
+                        turnState = 1;
+                    }
+                    else if(clicked != Type.WILD) {
+                        players[activePlayer].addToken(clicked);
+                        turnState = 2;
+                    }
+                }
+            }
+        } else if (turnState==1) {
+            Point d = null;
+            if(200<=x&&x<=290&&230<=y&&y<=350)
+                d = new Point(2, 0);
+            else if(300<=x&&x<=390&&230<=y&&y<=350)
+                d = new Point(2, 1);
+            else if(400<=x&&x<=490&&230<=y&&y<=350)
+                d = new Point(2, 2);
+            else if(500<=x&&x<=590&&230<=y&&y<=350)
+                d = new Point(2, 3);
+            else if(200<=x&&x<=290&&360<=y&&y<=480)
+                d = new Point(1, 0);
+            else if(300<=x&&x<=390&&360<=y&&y<=480)
+                d = new Point(1, 1);
+            else if(400<=x&&x<=490&&360<=y&&y<=480)
+                d = new Point(1, 2);
+            else if(500<=x&&x<=590&&360<=y&&y<=480)
+                d = new Point(1, 3);
+            else if(200<=x&&x<=290&&490<=y&&y<=610)
+                d = new Point(0, 0);
+            else if(300<=x&&x<=390&&490<=y&&y<=610)
+                d = new Point(0, 1);
+            else if(400<=x&&x<=490&&490<=y&&y<=610)
+                d = new Point(0, 2);
+            else if(500<=x&&x<=590&&490<=y&&y<=610)
+                d = new Point(0, 3);
+            if(d!=null) {
+                boolean b = players[activePlayer].buyReservedCard(displayedCards.get(d.x)[d.y]);
+                if(b) {
+                    Card[] row = displayedCards.get(d.x);
+                    row[d.y] = decks[d.x].cardList.removeFirst();
+                    displayedCards.put(d.x, row);
+                    turnState = 0;
+
+                } else {
+                    players[activePlayer].removeToken(Type.WILD);
+                    turnState = 0;
+                }
+            }
+        } else if (turnState == 2) {
+            Type clicked = null;
+            if(640<=x&&x<710&&540<=y&&y<=610)
+                clicked = Type.WHITE;
+            else if(710<=x&&x<780&&540<=y&&y<=610)
+                clicked = Type.BLACK;
+            else if(780<=x&&x<850&&540<=y&&y<=610)
+                clicked = Type.RED;
+            else if(850<=x&&x<920&&540<=y&&y<=610)
+                clicked = Type.GREEN;
+            else if(920<=x&&x<990&&540<=y&&y<=610)
+                clicked = Type.BLUE;
+            else if(990<=x&&x<1060&&540<=y&&y<=610)
+                clicked = Type.WILD;
+            if(clicked == prevClicked) {
+                if(gameTokens.getOrDefault(clicked, 0)>=3) {
                     players[activePlayer].addToken(clicked);
-                    //turnState = 2;
+                    turnState = 0;
                 }
             }
         }
-        System.out.println(e);
+        System.out.println(turnState);
         repaint();
     }
 
