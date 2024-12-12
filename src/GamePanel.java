@@ -337,7 +337,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
             prices.put(Type.RED, Integer.parseInt(scan.nextLine()));
             prices.put(Type.BLUE, Integer.parseInt(scan.nextLine()));
             prices.put(Type.GREEN, Integer.parseInt(scan.nextLine()));
-            Card aCard = new Card(points, discountcolor, tier, prices);
+            Card aCard = new Card(points, discountcolor, tier, prices, "Image/Tier1CardBack.png");
             scan.nextLine();
 
             decks[aCard.getTier()].addCard(aCard);
