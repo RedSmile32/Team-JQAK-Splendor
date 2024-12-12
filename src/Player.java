@@ -31,19 +31,41 @@ public class Player {
      * if they can, the card will be added, tokens will be subracted and the method returns true.
      * if not, the method will return false.
      */
-    /*public boolean buyCard(Card c) {
-        //determine types that are sufficient
-        ArrayList<Type> availTokens = new ArrayList<Type>();
-        int wildTokens = tokens.getOrDefault(Type.WILD, 0);
-        for(Type t: Type.values()) {
-            if(c.getPriceByColor(t) <= wildTokens + tokens.get(t) + this.getDiscount(t)) {
-                availTokens.add(t);
+    public boolean buyCard(Card c) {
+        //determine if the card can be bought
+        int temp = tokens.get(Type.WILD);
+        for (Type f: Type.values()) {
+            if (!f.equals(Type.WILD)) {
+                if (c.getPriceByColor(f) <= tokens.get(f) + temp + getDiscount(f)) {
+                    if (c.getPriceByColor(f) - tokens.get(f) - getDiscount(f) > 0) {
+                        temp -= c.getPriceByColor(f) - tokens.get(f) - getDiscount(f);
+                    }
+                } else {
+                    System.out.println(c.getPriceByColor(f));
+                    System.out.println(f);
+                    return false;
+                }
             }
         }
+        //subtract the tokens needed to buy the card
+        for (Type f: Type.values()) {
+            //subtract wild tokens first
+            if (c.getPriceByColor(f) - tokens.get(f) - getDiscount(f) > 0) {
+                tokens.put(Type.WILD, tokens.get(Type.WILD) - c.getPriceByColor(f) + tokens.get(f) + getDiscount(f));
+            }
+            //only subtracts tokens if the discount doesnt cover everything
+            if (getDiscount(f) < c.getPriceByColor(f)) {
+                tokens.put(f, tokens.get(f) - c.getPriceByColor(f) + getDiscount(f)); //this is wrong, correct it later.
+            }
 
-        //determine if types available are equal to
-    }g
-     */
+        }
+
+        //adds the card to the cards hashmap
+        ArrayList<Card> tempcardlist = cards.get(c.getDiscountColor());
+        tempcardlist.add(c);
+        cards.put(c.getDiscountColor(), tempcardlist);
+        return true;
+    }
 
     /**
      * adds a token to the player of the color t
