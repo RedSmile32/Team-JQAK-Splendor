@@ -102,7 +102,18 @@ public class GamePanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        int mX = e.getX();
+        int mY = e.getY();
+        Type[] typeList = Type.values();
 
+        for(int i = 0; i < Type.values().length; i++) {
+            if (mX >= (640 + (70 * i)) && mX <= (710 + (70 * i)) && mY >= 540 && mY <= 610) {
+                gameTokens.replace(typeList[i], gameTokens.get(typeList[i]) - 1);
+                break;
+            }
+        }
+        repaint();
+//        System.out.print(gameTokens);
     }
 
     @Override
