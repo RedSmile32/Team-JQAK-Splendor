@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.sql.Array;
 import java.util.*;
 
 
@@ -37,15 +38,6 @@ public class GamePanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
-        for(int j = 0; j < 15; j++) {
-            players[0].addToken(Type.BLUE);
-        }
-
-        HashMap<Type, Integer> prices = new HashMap<>();
-        prices.put(Type.BLUE, 5);
-        Card cw = new Card(3, Type.BLUE, 1, prices);
-        System.out.println(players[0].buyCard(cw));
-
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(Color.BLACK);
@@ -63,8 +55,6 @@ public class GamePanel extends JPanel implements MouseListener {
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
         g.drawString("Player 4: " + players[3].getScore(), 970, 310);
 
-
-
         for(int i = 0; i < 4; i++) {
             int numTimes = 0;
 
@@ -79,9 +69,7 @@ public class GamePanel extends JPanel implements MouseListener {
 
                 if(!t.equals(Type.WILD)) {
                     ArrayList<Card> c = current.cards.get(t);
-                    System.out.println(c);
                     Card card;
-                    System.out.println(20 * i);
                     if (c.size() > 0) {
                         card = c.getFirst();
                         card.draw(g, 640 + (50 * numCardsDrawn) + (325 * (i % 2)), 100 + 250 * (i / 2), 30);
@@ -101,6 +89,12 @@ public class GamePanel extends JPanel implements MouseListener {
                 decks[i].cardList.get(j).draw(g, 100 * j + 200, 130 * i + 230, 60);
 
             }
+        }
+
+        g.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        for(int i = 0; i < Type.values().length; i++) {
+            g.drawImage(ImageHandler.getTokenImage(Type.values()[i]), 640+(70 * i), 540, 70, 70, null);
+            g.drawString(gameTokens.get(Type.values()[i])+"", 665+(70 * i), 640);
         }
     }
 
@@ -200,12 +194,13 @@ public class GamePanel extends JPanel implements MouseListener {
             }
         }
 
-
-
-
-
-
-
+        gameTokens = new HashMap<>();
+        for(Type t: Type.values()) {
+            if(t == Type.WILD)
+                gameTokens.put(t, 5);
+            else
+                gameTokens.put(t, 7);
+        }
     }
 
 }
