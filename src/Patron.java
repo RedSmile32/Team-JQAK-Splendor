@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
 public class Patron {
@@ -88,5 +89,30 @@ public class Patron {
 
     public void draw(Graphics g, int x, int y, int scale) {
 
+        Color c = g.getColor();
+        Font f = g.getFont();
+
+        g.setColor(new Color((int)(155 * Math.random()) + 100, (int)(155 * Math.random()) + 100, (int)(155 * Math.random()) + 100));
+        g.setFont(new Font("SansSerif", Font.PLAIN, (int) Math.round(((double) scale) / 4)));
+
+        g.fillRect(x, y, (int) (1 * scale), 1 * scale);
+
+
+        g.setFont(new Font("SansSerif", Font.PLAIN, (int) Math.round(((double) scale) / 8)));
+
+
+        int numTimes = 0;
+        for (Type t : Type.values()) {
+            int p = price.getOrDefault(t, 0);
+            if (p != 0) {
+                BufferedImage tokenImage = ImageHandler.getTokenImage(t);
+                g.drawImage(tokenImage, (x) + (scale / 12), (int) ((y + (scale) * ((p - 1) / 8)) + 1.65 * (scale) - numTimes * (scale / 4)), scale / 4, scale / 4, null);
+                g.setColor(Color.BLACK);
+                g.drawString(p + "", (int) ((x) + (scale / 2.7)), (int) ((y + (scale) * ((p - 1) / 8)) + 1.825 * scale - numTimes * (scale / 4)));
+                numTimes++;
+            }
+        }
+        g.setColor(c);
+        g.setFont(f);
     }
 }

@@ -20,7 +20,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     HashMap<Integer, Card[]> displayedCards;
     HashMap<Type, Integer> gameTokens;
     BufferedImage title;
-    ArrayList<Patron> gamePatrons;
+    Patron[] patrons;
     int activePlayer;
 
     /**
@@ -137,7 +137,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
         }
     }
 
-    Patron[] patrons = new Patron[5];
+
 
     @Override
     public void mouseClicked(MouseEvent e) {
