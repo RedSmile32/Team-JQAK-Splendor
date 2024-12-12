@@ -79,7 +79,9 @@ public class Card {
                     numTimes++;
                 }
             }
-        } else if (points != -1 || discountColor != Type.WILD) {
+            g.setColor(c);
+            g.setFont(f);
+        } else if (flipped || points != -1 || discountColor != Type.WILD) {
             if (tier.equals(0)) {
                 g.setColor(Color.GREEN);
             } else if (tier.equals(1)) {

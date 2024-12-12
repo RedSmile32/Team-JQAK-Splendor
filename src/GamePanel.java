@@ -68,24 +68,31 @@ public class GamePanel extends JPanel implements MouseListener {
         for(int i = 0; i < 4; i++) {
             int numTimes = 0;
 
-
-
-            System.out.println(players[1].tokens.get(Type.BLUE));
-
             Player current = players[i];
+            int numCardsDrawn = 0;
             for (Type t : Type.values()) {
-                g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
-                numTimes++;
-                g.setFont(new Font("SansSerif", Font.PLAIN, 18));
-                g.setColor(Color.BLACK);
-                g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
+                if (t != Type.WILD) {
+                    g.drawImage(ImageHandler.getTokenImage(t), 640 + (327 * (i % 2)) + 30 * numTimes, 230 + (250 * (i / 2)), 30, 30, null);
+                    numTimes++;
+                    g.setFont(new Font("SansSerif", Font.PLAIN, 18));
+                    g.setColor(Color.BLACK);
+                    g.drawString(players[i].tokens.get(t) + "", 620 + (327 * (i % 2)) + 30 * numTimes, 225 + (250 * (i / 2)));
 
-                ArrayList<Card> c = current.cards.get(t);
-                Card card;
-                if(c.size() > 0) {
-                    card = c.getFirst();
-                    card.draw(g, 0, 0, 30);
+                    ArrayList<Card> c = current.cards.get(t);
+                    System.out.println(c);
+                    Card card;
+                    System.out.println(20*i);
+                    if (c.size() > 0) {
+                        card = c.getFirst();
+                        card.draw(g, 640 + (50 * numCardsDrawn) + (325*(i%2)), 100 + 250*(i/2), 30);
+                        g.drawString( c.size() + "x", 650 + (50 * numCardsDrawn) + (325*(i%2)), 95 + 250*(i/2));
+                    } else {
+                        g.fillRect(640 + (50 * numCardsDrawn) + (325*(i%2)), 100  + 250*(i/2), 45, 60);
+                        g.drawImage(ImageHandler.getTokenImage(t), 640 + (50 * numCardsDrawn) + (325*(i%2)), 108 + 250*(i/2), 45, 45, null);
+                        g.drawString( "0x", 650 + (50 * numCardsDrawn) + (325*(i%2)), 95 + 250*(i/2));
+                    }
                 }
+                numCardsDrawn++;
             }
         }
 
