@@ -1,5 +1,7 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,12 +12,18 @@ public class Card {
     private Integer points;
     private Type discountColor;
     private Integer tier;
+    private BufferedImage cardImage;
 
-    public Card(Integer points, Type discountColor, Integer tier, HashMap<Type, Integer> price) {
+    public Card(Integer points, Type discountColor, Integer tier, HashMap<Type, Integer> price, String directory) {
         this.points = points;
         this.discountColor = discountColor;
         this.tier = tier;
         this.price = price;
+        try {
+            this.cardImage = ImageIO.read(Card.class.getResource(directory));
+        } catch (IOException e) {
+            System.out.println("Something went wrong.");
+        }
     }
     public Type getDiscountColor(){
         return discountColor;
@@ -55,7 +63,7 @@ public class Card {
             g.setColor(Color.WHITE);
             g.setFont(new Font("SansSerif", Font.PLAIN, (int) Math.round(((double) scale) / 4)));
 
-            g.fillRect(x, y, (int) (1.5 * scale), 2 * scale);
+            g.drawImage(cardImage, x, y, (int) (1.5 * scale), 2 * scale, null);
             g.setColor(new Color(200, 200, 200));
             g.fillRect(x, y, (int) (1.5 * scale), (int) (0.5 * scale));
             g.setColor(Color.BLACK);
