@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.imageio.ImageIO;
@@ -12,14 +14,32 @@ import java.sql.Array;
 import java.util.*;
 
 
-public class GamePanel extends JPanel implements MouseListener {
+public class GamePanel extends JPanel implements MouseListener, KeyListener {
     Player[] players = new Player[4];
     Deck[] decks = new Deck[3];
-    HashMap<Integer, Card> displayedCards;
+    HashMap<Integer, Card[]> displayedCards;
     HashMap<Type, Integer> gameTokens;
     BufferedImage title;
     ArrayList<Patron> gamePatrons;
     int activePlayer;
+
+    /**
+     * turnState is a variable that determines the state of the current turn in case the turn requires multiple clicks.
+     * For turns that involve a single click:
+     *     - To buy a card, if turnState = 0 and a card is clicked on, the game checks if the card can be bought and
+     *     buys it and moves on if it can. If it can't, turnState is set to 0 and the turn is restarted.
+     *     - To buy a reserved card, if turnState = 0 and the reserved card slot is clicked on, turnState is set to 1
+     *     and a popup opens allowing the player to select the reserved card they want to buy. If they can, the card is
+     *     bought and next player gets their turn. If it can't, turnState is set to 0 and the turn restarts.
+     * For turns that involve more than 1 click:
+     *     - When a token that is in the game inventory is clicked, the token is given to the player if it can be and
+     *     turnState is set to 2. Then, two things can happen:
+     *         - If a token of the same type is selected, the player is given a token and the turn moves on.
+     *             - If there aren't enough, the token already given is taken away and the player is prompted to make
+     *             another move.
+ *             - If a token of a different type is selected, turnState is set to 3 and the player is given it. Another
+     *             token is then selected and then the turn moves to the next player.
+     */
     int turnState;
     int winner;
 
@@ -38,6 +58,26 @@ public class GamePanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
+        for(Type t: Type.values()) {
+            if(t != Type.WILD) {
+                int sum = 0;
+                for(Player p: players) {
+                    sum+=p.tokens.get(t);
+                }
+                sum += gameTokens.get(t);
+                while(sum!=7) {
+                    if (sum > 7) {
+                        gameTokens.put(t, gameTokens.get(t) - 1);
+                        sum--;
+                    }
+                    if (sum < 7) {
+                        gameTokens.put(t, gameTokens.get(t) + 1);
+                        sum++;
+                    }
+                }
+            }
+        }
+
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(Color.BLACK);
@@ -86,8 +126,7 @@ public class GamePanel extends JPanel implements MouseListener {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
-                decks[i].cardList.get(j).draw(g, 100 * j + 200, 130 * i + 230, 60);
-
+                displayedCards.get(2-i)[j].draw(g, 100 * j + 200, 130 * i + 230, 60);
             }
         }
 
@@ -102,7 +141,71 @@ public class GamePanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
 
+        if(turnState == 0) {
+            boolean clickedOnCard = false;
+            Point d = null;
+            Type clicked = null;
+            if(200<=x&&x<=290&&230<=y&&y<=350)
+                d = new Point(2, 0);
+            else if(300<=x&&x<=390&&230<=y&&y<=350)
+                d = new Point(2, 1);
+            else if(400<=x&&x<=490&&230<=y&&y<=350)
+                d = new Point(2, 2);
+            else if(500<=x&&x<=590&&230<=y&&y<=350)
+                d = new Point(2, 3);
+            else if(200<=x&&x<=290&&360<=y&&y<=480)
+                d = new Point(1, 0);
+            else if(300<=x&&x<=390&&360<=y&&y<=480)
+                d = new Point(1, 1);
+            else if(400<=x&&x<=490&&360<=y&&y<=480)
+                d = new Point(1, 2);
+            else if(500<=x&&x<=590&&360<=y&&y<=480)
+                d = new Point(1, 3);
+            else if(200<=x&&x<=290&&490<=y&&y<=610)
+                d = new Point(0, 0);
+            else if(300<=x&&x<=390&&490<=y&&y<=610)
+                d = new Point(0, 1);
+            else if(400<=x&&x<=490&&490<=y&&y<=610)
+                d = new Point(0, 2);
+            else if(500<=x&&x<=590&&490<=y&&y<=610)
+                d = new Point(0, 3);
+            else if(640<=x&&x<710&&540<=y&&y<=610)
+                clicked = Type.WHITE;
+            else if(710<=x&&x<780&&540<=y&&y<=610)
+                clicked = Type.BLACK;
+            else if(780<=x&&x<850&&540<=y&&y<=610)
+                clicked = Type.RED;
+            else if(850<=x&&x<920&&540<=y&&y<=610)
+                clicked = Type.GREEN;
+            else if(920<=x&&x<990&&540<=y&&y<=610)
+                clicked = Type.BLUE;
+            else if(990<=x&&x<1060&&540<=y&&y<=610)
+                clicked = Type.WILD;
+            if(d!=null) {
+                int wilds = players[activePlayer].tokens.get(Type.WILD);
+                boolean b = players[activePlayer].buyCard(displayedCards.get(d.x)[d.y]);
+                if(b) {
+                    int wilds2 = players[activePlayer].tokens.get(Type.WILD);
+                    Card[] row = displayedCards.get(d.x);
+                    for(Type t: row[d.y].getNonZeroTypes()) {
+                        gameTokens.put(t, gameTokens.get(t)+row[d.y].getPriceByColor(t)-players[activePlayer].getDiscount(t));
+                    }
+                    row[d.y] = decks[d.x].cardList.removeLast();
+                    displayedCards.put(d.x, row);
+                }
+            } else if(clicked!=null) {
+                if(gameTokens.get(clicked)>0) {
+                    gameTokens.put(clicked, gameTokens.get(clicked)-1);
+                    players[activePlayer].addToken(clicked);
+                    //turnState = 2;
+                }
+            }
+        }
+        System.out.println(e);
+        repaint();
     }
 
     @Override
@@ -201,6 +304,33 @@ public class GamePanel extends JPanel implements MouseListener {
             else
                 gameTokens.put(t, 7);
         }
+        activePlayer = 0;
+
+        displayedCards = new HashMap<>();
+        for(int i = 0; i < 3; i++) {
+            Card[] row = new Card[4];
+            for(int j = 0; j < 4; j++) {
+                row[j]=decks[i].cardList.removeLast();
+            }
+            displayedCards.put(i, row);
+        }
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if(turnState == 1) {
+            if(e.getKeyChar()=='1') {
+            }
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }
