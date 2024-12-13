@@ -124,6 +124,12 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
             }
         }
 
+        if (patrons[0] != null) {
+            for (int i = 0; i < 5; i++) {
+                patrons[i].draw(g, 180 + i*90, 30, 80);
+            }
+        }
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
                 displayedCards.get(2-i)[j].draw(g, 100 * j + 200, 130 * i + 230, 60);
@@ -135,6 +141,8 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
             g.drawImage(ImageHandler.getTokenImage(Type.values()[i]), 640+(70 * i), 540, 70, 70, null);
             g.drawString(gameTokens.get(Type.values()[i])+"", 665+(70 * i), 640);
         }
+
+
     }
 
 
@@ -282,19 +290,17 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
         //not sure if this will work, only time will tell.
         //adds patrons to the patron stack after clearing out said stack
         patrons = new Patron[5];
-        while (patrons[4] != null) {
-            Patron p = Patron.patronList[(int) (Math.random() * 10)];
-            for (int i = 0; i <= tracker; i++) {
-                if (i == tracker) {
-                    patrons[tracker] = p;
-                    tracker++;
-                    break;
-                }
-                if (patrons[i].equals(p)) {
-                    break;
-                }
+        Patron.setupPatrons();
+        for (int i = 0; i < 5; i++) {
 
+            patrons[i] = Patron.patronList[(int) (Math.random() * 10)];
+            for (int j = 0; j< i; j++) {
+                if (patrons[i].equals(patrons[j])) {
+                    i--;
+                    break;
+                }
             }
+
         }
 
         gameTokens = new HashMap<>();
