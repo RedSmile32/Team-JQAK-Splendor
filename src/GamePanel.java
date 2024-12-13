@@ -20,7 +20,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     HashMap<Integer, Card[]> displayedCards;
     HashMap<Type, Integer> gameTokens;
     BufferedImage title;
-    ArrayList<Patron> gamePatrons;
+    Patron[] patrons;
     int activePlayer;
     Type prevClicked, prevClicked2;
     String invalidMessage;
@@ -150,6 +150,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
         }
 
 
+
         for(int i = 0; i < 4; i++) {
             g.fillRect(880+(325*(i/2)), 180+ 250 * (i % 2), 45, 60);
             Font currentFont = g.getFont();
@@ -162,6 +163,12 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
             }
             g.setFont(currentFont);
             g.setColor(currentColor);
+
+        if (patrons[0] != null) {
+            for (int i = 0; i < 5; i++) {
+                patrons[i].draw(g, 180 + i*90, 30, 80);
+            }
+
         }
 
         for (int i = 0; i < 3; i++) {
@@ -175,6 +182,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
             g.drawImage(ImageHandler.getTokenImage(Type.values()[i]), 640+(70 * i), 540, 70, 70, null);
             g.drawString(gameTokens.get(Type.values()[i])+"", 665+(70 * i), 640);
         }
+
         g.setFont(new Font("SansSerif", Font.PLAIN, 20));
         if(invalidMessage != null) {
             g.drawString(invalidMessage, 640, 670);
@@ -185,9 +193,10 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
         if(turnState == 4) {
             g.drawString("Press 1-3 to attempt to buy a reserved card", 200, 200);
         }
+
     }
 
-    Patron[] patrons = new Patron[5];
+
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -437,19 +446,17 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
         //not sure if this will work, only time will tell.
         //adds patrons to the patron stack after clearing out said stack
         patrons = new Patron[5];
-        while (patrons[4] != null) {
-            Patron p = Patron.patronList[(int) (Math.random() * 10)];
-            for (int i = 0; i <= tracker; i++) {
-                if (i == tracker) {
-                    patrons[tracker] = p;
-                    tracker++;
-                    break;
-                }
-                if (patrons[i].equals(p)) {
-                    break;
-                }
+        Patron.setupPatrons();
+        for (int i = 0; i < 5; i++) {
 
+            patrons[i] = Patron.patronList[(int) (Math.random() * 10)];
+            for (int j = 0; j< i; j++) {
+                if (patrons[i].equals(patrons[j])) {
+                    i--;
+                    break;
+                }
             }
+
         }
 
         gameTokens = new HashMap<>();
