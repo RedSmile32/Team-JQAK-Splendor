@@ -152,7 +152,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
 
 
         for(int i = 0; i < 4; i++) {
-            g.fillRect(880+(325*(activePlayer%2)), 180+ 250 * (activePlayer / 2), 45, 60);
+            g.fillRect(880 + (325 * (activePlayer % 2)), 180 + 250 * (activePlayer / 2), 45, 60);
             Font currentFont = g.getFont();
             Color currentColor = g.getColor();
             g.setFont(new Font("SansSerif", Font.PLAIN, 8));
@@ -162,6 +162,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
 
             g.setFont(currentFont);
             g.setColor(currentColor);
+        }
 
         if (patrons[0] != null) {
             for (int i = 0; i < 5; i++) {
