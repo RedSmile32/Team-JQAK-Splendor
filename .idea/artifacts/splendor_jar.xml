@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="splendor:jar">
-    <output-path>$USER_HOME$/Documents/Jars/artifacts/splendor_jar</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts</output-path>
     <root id="archive" name="splendor.jar">
       <element id="module-output" name="splendor" />
     </root>

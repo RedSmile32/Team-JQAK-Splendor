@@ -152,15 +152,14 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
 
 
         for(int i = 0; i < 4; i++) {
-            g.fillRect(880+(325*(i/2)), 180+ 250 * (i % 2), 45, 60);
+            g.fillRect(880+(325*(activePlayer%2)), 180+ 250 * (activePlayer / 2), 45, 60);
             Font currentFont = g.getFont();
             Color currentColor = g.getColor();
             g.setFont(new Font("SansSerif", Font.PLAIN, 8));
             g.setColor(Color.WHITE);
-            if(true) {
-                g.drawString("Click for", 880 + (325 * (i / 2)), 205 + 250 * (i % 2));
-                g.drawString(players[i].cards.getOrDefault(Type.WILD, new ArrayList<>()).size() + " Reserved", 880 + (325 * (i % 2)), 215 + 250 * (i / 2));
-            }
+            g.drawString("Click for", 880 + (325 * (activePlayer % 2)), 205 + 250 * (activePlayer / 2));
+            g.drawString(players[activePlayer].cards.getOrDefault(Type.WILD, new ArrayList<>()).size() + " Reserved", 880 + (325 * (activePlayer % 2)), 215 + 250 * (activePlayer / 2));
+
             g.setFont(currentFont);
             g.setColor(currentColor);
 
