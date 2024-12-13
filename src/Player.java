@@ -1,15 +1,15 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
-public class Player {
+public class Player implements Comparable {
     HashMap<Type, ArrayList<Card>> cards = new HashMap<Type, ArrayList<Card>>();
     HashMap<Type, Integer> tokens = new HashMap<>();
     ArrayList<Patron> patrons = new ArrayList<>();
     Boolean p1;
+    int num;
 
-    public Player(Boolean isP1) {
+    public Player(int num, Boolean isP1) {
+        this.num = num;
         cards = new HashMap<>();
         for(Type type: Type.values()) {
             cards.put(type, new ArrayList<Card>());
@@ -91,8 +91,8 @@ public class Player {
                     result += c.getPoints();
                 }
             }
-            result += patrons.size() * 3;
         }
+        result += patrons.size() * 3;
 
         return result;
     }
@@ -122,5 +122,26 @@ public class Player {
 
     public void setP1(Boolean b) {
         p1 = b;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if(o == null)
+            throw new NullPointerException();
+        if(!(o instanceof Player))
+            throw new ClassCastException();
+        Player other = (Player) o;
+        if(this.getScore()>other.getScore())
+            return 1;
+        else if(this.getScore()<other.getScore())
+            return -1;
+        else {
+            if(this.num>other.num)
+                return 1;
+            else if(this.num<other.num)
+                return -1;
+            else
+                return 0;
+        }
     }
 }

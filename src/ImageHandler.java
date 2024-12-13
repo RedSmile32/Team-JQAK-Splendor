@@ -1,6 +1,4 @@
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.Objects;
 import javax.imageio.ImageIO;
 
 public class ImageHandler {
@@ -34,6 +32,21 @@ public class ImageHandler {
             GAME_BACKGROUND = temp;
         else
             GAME_BACKGROUND = null;
+    }
+    static final BufferedImage TITLE;
+    static {
+        boolean init = false;
+        BufferedImage temp = null;
+        try {
+            temp = ImageIO.read(GamePanel.class.getResource("Image/SplendorTitle.png"));
+            init = true;
+        } catch (Exception e) {
+            System.out.println("Title not found");
+        }
+        if(init)
+            TITLE = temp;
+        else
+            TITLE = null;
     }
 
     public static BufferedImage getTokenImage(Type type) {

@@ -3,7 +3,6 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
 public class Patron {
-    Type type;
     HashMap<Type, Integer> price;
     String name;
     int owner;
@@ -20,10 +19,6 @@ public class Patron {
         r = (int)(155 * Math.random()) + 100;
         gr = (int)(155 * Math.random()) + 100;
         b = (int)(155 * Math.random()) + 100;
-    }
-
-    public HashMap<Type, Integer> getPrice() {
-        return price;
     }
 
     public static void setupPatrons() {
@@ -131,13 +126,5 @@ public class Patron {
         }
         g.setColor(c);
         g.setFont(f);
-    }
-
-    public int getOwner() {
-        return owner;
-    }
-
-    public void setOwner(int player) {
-        owner = player;
     }
 }
