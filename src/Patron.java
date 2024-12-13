@@ -7,6 +7,9 @@ public class Patron {
     HashMap<Type, Integer> price;
     String name;
     int owner;
+    int r;
+    int gr;
+    int b;
 
     public static Patron[] patronList = new Patron[10];
 
@@ -14,6 +17,9 @@ public class Patron {
     public Patron(HashMap<Type, Integer> price, String theString) {
         this.price = price;
         this.name = theString;
+        r = (int)(155 * Math.random()) + 100;
+        gr = (int)(155 * Math.random()) + 100;
+        b = (int)(155 * Math.random()) + 100;
     }
 
     public HashMap<Type, Integer> getPrice() {
@@ -103,7 +109,7 @@ public class Patron {
         Color c = g.getColor();
         Font f = g.getFont();
 
-        g.setColor(new Color((int)(155 * Math.random()) + 100, (int)(155 * Math.random()) + 100, (int)(155 * Math.random()) + 100));
+        g.setColor(new Color(r, gr, b));
         g.setFont(new Font("SansSerif", Font.PLAIN, (int) Math.round(((double) scale) / 4)));
 
         g.fillRect(x, y, (int) (1 * scale), 1 * scale);
