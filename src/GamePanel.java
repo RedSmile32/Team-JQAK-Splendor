@@ -22,7 +22,8 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     BufferedImage title;
     ArrayList<Patron> gamePatrons;
     int activePlayer;
-    Type prevClicked;
+    Type prevClicked, prevClicked2;
+    String invalidMessage;
 
     /**
      * turnState is a variable that determines the state of the current turn in case the turn requires multiple clicks.
@@ -61,6 +62,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     public void paint(Graphics g) {
         if(turnState==0) {
             prevClicked=null;
+            prevClicked2=null;
         }
         for(Type t: Type.values()) {
             if(t != Type.WILD) {
@@ -91,6 +93,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
         g.fillRect(635, 268, 1280, 4);
         g.fillRect(958, 0, 4, 520);
 
+
         g.setColor(Color.YELLOW);
         g.setFont(new Font("SansSerif", Font.PLAIN, 40));
         g.drawString("Nobles", 40, 80);
@@ -98,6 +101,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
         g.drawString("Player 2: " + players[1].getScore(), 970, 40);
         g.drawString("Player 3: " + players[2].getScore(), 640, 310);
         g.drawString("Player 4: " + players[3].getScore(), 970, 310);
+
 
         for(int i = 0; i < 4; i++) {
             int numTimes = 0;
@@ -139,6 +143,12 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
             g.drawImage(ImageHandler.getTokenImage(Type.values()[i]), 640+(70 * i), 540, 70, 70, null);
             g.drawString(gameTokens.get(Type.values()[i])+"", 665+(70 * i), 640);
         }
+        g.setFont(new Font("SansSerif", Font.PLAIN, 20));
+        if(invalidMessage != null) {
+            g.drawString(invalidMessage, 640, 670);
+        }
+        invalidMessage = null;
+        g.drawString("Player " + (activePlayer+1) + " is active", 10, 200);
     }
 
     Patron[] patrons = new Patron[5];
@@ -208,9 +218,12 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
                         players[activePlayer].addToken(clicked);
                         turnState = 1;
                     }
+                    else if(clicked==Type.WILD && players[activePlayer].cards.get(Type.WILD).size()>=3)
+                        invalidMessage = "You already have 3 reserved cards!";
                     else if(clicked != Type.WILD) {
                         players[activePlayer].addToken(clicked);
                         turnState = 2;
+                        prevClicked = clicked;
                     }
                 }
             }
@@ -265,13 +278,43 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
                 clicked = Type.GREEN;
             else if(920<=x&&x<990&&540<=y&&y<=610)
                 clicked = Type.BLUE;
-            else if(990<=x&&x<1060&&540<=y&&y<=610)
-                clicked = Type.WILD;
+            System.out.print(clicked==prevClicked);
             if(clicked == prevClicked) {
                 if(gameTokens.getOrDefault(clicked, 0)>=3) {
                     players[activePlayer].addToken(clicked);
+                    gameTokens.put(clicked, gameTokens.get(clicked)-1);
                     turnState = 0;
+                } else if (gameTokens.getOrDefault(clicked, 0)<3) {
+                    players[activePlayer].removeToken(clicked);
+                    gameTokens.put(clicked, gameTokens.get(clicked)+1);
+                    turnState = 0;
+                    invalidMessage = "You cannot select 2 of the same if there would be less than two left!";
                 }
+            } else if(clicked != null && clicked != prevClicked) {
+                if(gameTokens.getOrDefault(clicked, 0) != 0) {
+                    gameTokens.put(clicked, gameTokens.get(clicked)-1);
+                    players[activePlayer].addToken(clicked);
+                    prevClicked2 = prevClicked;
+                    prevClicked = clicked;
+                    turnState = 3;
+                }
+            }
+        } else if(turnState == 3) {
+            Type clicked = null;
+            if(640<=x&&x<710&&540<=y&&y<=610)
+                clicked = Type.WHITE;
+            else if(710<=x&&x<780&&540<=y&&y<=610)
+                clicked = Type.BLACK;
+            else if(780<=x&&x<850&&540<=y&&y<=610)
+                clicked = Type.RED;
+            else if(850<=x&&x<920&&540<=y&&y<=610)
+                clicked = Type.GREEN;
+            else if(920<=x&&x<990&&540<=y&&y<=610)
+                clicked = Type.BLUE;
+            if(clicked != prevClicked && clicked != prevClicked2 && gameTokens.getOrDefault(clicked, 0) > 0) {
+                gameTokens.put(clicked, gameTokens.get(clicked) - 1);
+                players[activePlayer].addToken(clicked);
+                turnState = 0;
             }
         }
         System.out.println(turnState);
