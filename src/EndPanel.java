@@ -1,27 +1,30 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.*;
 import java.util.*;
 
 public class EndPanel extends JPanel implements MouseListener {
-    private BufferedImage endPanelBackground;
     private HashMap<Integer, Integer> playerData;
     private int winner;
 
-    public EndPanel(HashMap<Integer, Integer> playerData, int winner) {
-        this.playerData = playerData;
-        this.winner = winner;
-        addMouseListener(this);
+    public EndPanel(TreeSet<Player> playerTreeSet) {
+        if(playerTreeSet!=null) {
+            this.winner = playerTreeSet.getFirst().num;
+            playerData = new HashMap<>();
+            Iterator<Player> iter = playerTreeSet.iterator();
+            while (iter.hasNext()) {
+                Player p = iter.next();
+                playerData.put(p.num, p.getScore());
+            }
+            addMouseListener(this);
 //        try {
 //            endPanelBackground = ImageIO.read(EndPanel.class.getResource("Image/EndPanelBackground.png"));
 //        }
 //        catch (Exception e) {
 //            System.out.println("EndPanel resource not found");
 //        }
+        }
     }
 
     public void paint(Graphics g) {
@@ -51,7 +54,7 @@ public class EndPanel extends JPanel implements MouseListener {
         while (iter.hasNext()) {
             Integer current = iter.next();
             g.setFont(new Font("Arial", Font.PLAIN, 30));
-            g.drawString("Player " + current,960,155 + extraY);
+            g.drawString("Player " + (current + 1),960,155 + extraY);
             g.setFont(new Font("Arial", Font.PLAIN, 18));
             g.drawString("Points: " + playerData.get(current),980,180 + extraY);
             extraY += 60;

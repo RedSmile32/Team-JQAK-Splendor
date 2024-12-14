@@ -1,18 +1,12 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.*;
-import java.util.*;
 
 public class MenuPanel extends JPanel implements MouseListener {
-    private int easterEggTrigger;
 
 
     public MenuPanel() {
-        easterEggTrigger = 0;
         addMouseListener(this);
     }
 

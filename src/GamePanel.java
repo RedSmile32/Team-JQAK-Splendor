@@ -10,7 +10,6 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.sql.Array;
 import java.util.*;
 
 
@@ -19,12 +18,11 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     Deck[] decks = new Deck[3];
     HashMap<Integer, Card[]> displayedCards;
     HashMap<Type, Integer> gameTokens;
-    BufferedImage title;
     Patron[] patrons;
     int activePlayer;
     Type prevClicked, prevClicked2;
     String invalidMessage;
-
+    boolean finalRound;
     /**
      * turnState is a variable that determines the state of the current turn in case the turn requires multiple clicks.
      * For turns that involve a single click:
@@ -43,14 +41,8 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
      *             token is then selected and then the turn moves to the next player.
      */
     int turnState;
-    int winner;
 
     public GamePanel() {
-        try {
-            title = ImageIO.read(GamePanel.class.getResource("Image/SplendorTitle.png"));
-        } catch (Exception e) {
-            System.out.println("Resource Location Failure");
-        }
         addMouseListener(this);
         addKeyListener(this);
 
@@ -60,7 +52,27 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
 
     }
 
+    public GamePanel(int g) {
+
+    }
+
     public void paint(Graphics g) {
+        for(Player p: players) {
+            for(int i = 0; i < 5; i++) {
+                if (patrons[i] != null) {
+                    boolean attract = true;
+                    for (Type t : Type.values()) {
+                        if (p.cards.get(t).size() < patrons[i].price.getOrDefault(t, 0)) {
+                            attract = false;
+                        }
+                    }
+                    if (attract) {
+                        p.patrons.add(patrons[i]);
+                        patrons[i] = null;
+                    }
+                }
+            }
+        }
         if(turnState==0) {
             prevClicked=null;
             prevClicked2=null;
@@ -100,6 +112,22 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
             sum++;
             gameTokens.put(Type.WILD, gameTokens.get(Type.WILD)+1);
         }
+        if(activePlayer == 0 && finalRound) {
+            TreeSet<Player> leaderboard = new TreeSet<>();
+            for(Player p: players) {
+                System.out.println(p);
+                leaderboard.add(p);
+                System.out.println(leaderboard);
+            }
+            System.out.println(leaderboard);
+            Splendor.endGame(leaderboard);
+        }
+        for(Player p: players) {
+            if(p.getScore()>=15)
+                finalRound = true;
+        }
+
+
 
         g.drawImage(ImageHandler.GAME_BACKGROUND, 0, 0, getWidth(), getHeight(), null);
 
@@ -166,7 +194,8 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
 
         if (patrons[0] != null) {
             for (int i = 0; i < 5; i++) {
-                patrons[i].draw(g, 180 + i*90, 30, 80);
+                if(patrons[i] != null)
+                    patrons[i].draw(g, 180 + i*90, 30, 80);
             }
 
         }
@@ -398,7 +427,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener {
     // a helper function that starts the game when the startgame or new game button is pressed
     public void startGame ( int playerNumber){ //just set playerNumber to 4 if we do not want customizable
         for (int i = 0; i < playerNumber; i++) {
-            players[i] = new Player(false);
+            players[i] = new Player(i, false);
         }
         players[0].setP1(true);
 

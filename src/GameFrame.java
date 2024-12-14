@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.HashMap;
+import java.util.TreeSet;
 
 public class GameFrame extends JFrame {
     static final int WIDTH = 1280;
@@ -19,6 +19,8 @@ public class GameFrame extends JFrame {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menuPanel = new MenuPanel();
+        gamePanel = new GamePanel(1);
+        endPanel = new EndPanel(null);
         add(menuPanel);
         setVisible(true);
     }
@@ -30,19 +32,25 @@ public class GameFrame extends JFrame {
      */
     public void startGame() {
         remove(menuPanel);
+        remove(gamePanel);
+        remove(endPanel);
         gamePanel = new GamePanel();
         add(gamePanel);
         setVisible(true);
     }
 
-    public void endGame(HashMap<Integer, Integer> plrData, int winner) {
+    public void endGame(TreeSet<Player> playerTreeSet) {
         remove(menuPanel);
-        endPanel = new EndPanel(plrData, winner);
+        remove(gamePanel);
+        remove(endPanel);
+        endPanel = new EndPanel(playerTreeSet);
         add(endPanel);
         setVisible(true);
     }
 
     public void mainMenu() {
+        remove(menuPanel);
+        remove(gamePanel);
         remove(endPanel);
         menuPanel = new MenuPanel();
         add(menuPanel);

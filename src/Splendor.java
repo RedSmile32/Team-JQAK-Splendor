@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.TreeSet;
 
 public class Splendor {
 
@@ -12,8 +12,8 @@ public class Splendor {
         splendor.startGame();
     }
 
-    public static void endGame(HashMap<Integer, Integer> plrData, int winner) {
-        splendor.endGame(plrData, winner);
+    public static void endGame(TreeSet<Player> playerTreeSet) {
+        splendor.endGame(playerTreeSet);
     }
 
     public static void mainMenu() {
